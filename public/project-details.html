@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../src/assets/icons/Cloud.ico" type="x-icon">
+    <title>Detalhes do Projeto | Sergio Sena</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../src/css/style.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body class="min-h-screen">
+    <div class="grid-overlay"></div>
+    
+    <!-- Particles Background -->
+    <div id="particles-js" class="fixed top-0 left-0 w-full h-full z-0"></div>
+    
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-8 relative z-10">
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-center py-8">
+            <div class="flex items-center mb-6 md:mb-0">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center mr-4 neon-border overflow-hidden">
+                    <img src="../src/assets/images/Perfil foto.png" alt="Sergio Sena" class="w-full h-full object-cover">
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold gradient-text">Sergio Sena</h1>
+            </div>
+            
+            <nav class="flex space-x-1 md:space-x-6">
+                <a href="index.html#online-projects" class="px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm md:text-base">ONLINE</a>
+                <a href="index.html#projects" class="px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm md:text-base">DESENVOLVIMENTO</a>
+                <a href="index.html#about" class="px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm md:text-base">SOBRE</a>
+                <a href="index.html#contact" class="px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm md:text-base">CONTATO</a>
+            </nav>
+        </header>
+        
+        <!-- Project Details Section -->
+        <section class="py-16">
+            <div class="mb-8">
+                <a href="index.html" class="inline-flex items-center text-cyan-400 hover:underline">
+                    <i class="fas fa-arrow-left mr-2"></i> Voltar para a página inicial
+                </a>
+            </div>
+            
+            <div id="project-details" class="bg-gray-800 rounded-2xl p-8 neon-border">
+                <!-- Content will be loaded dynamically via JavaScript -->
+                <div class="flex justify-center items-center h-64">
+                    <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-cyan-400"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="py-8 border-t border-gray-800 mt-16">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <p class="text-gray-400">&copy; 2024 Sergio Sena. Todos os direitos reservados.</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://github.com/sergio-sena" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/sergio-sena-cloud" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:senanetworker@gmail.com" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="../src/js/main.js"></script>
+    <script>
+        // Garantir que o particles.js seja inicializado nesta página também
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof particlesJS !== 'undefined') {
+                particlesJS("particles-js", {
+                    particles: {
+                        number: { value: 80 },
+                        color: { value: "#00f7ff" },
+                        opacity: { value: 0.3 },
+                        size: { value: 3 },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: "#00f7ff",
+                            opacity: 0.2
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get project ID from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('project');
+            
+            // Project data (in a real application, this would come from a database or API)
+            const projectsData = {
+                'autodeploy': {
+                    name: 'AutoDeploy',
+                    category: 'DevOps',
+                    client: 'Projeto Pessoal',
+                    date: 'Julho 2024',
+                    technologies: ['AWS', 'GitHub Actions', 'CI/CD', 'Docker', 'Node.js'],
+                    description: 'Sistema de implantação automática para aplicações web com integração contínua e entrega contínua. Permite automatizar todo o processo de deploy desde o commit até a produção.',
+                    features: [
+                        'Integração com GitHub Actions para automação de CI/CD',
+                        'Deploy automático em ambientes AWS (EC2, ECS, Lambda)',
+                        'Testes automatizados antes da implantação',
+                        'Notificações de status via Slack/Discord',
+                        'Rollback automático em caso de falhas',
+                        'Dashboard para monitoramento de deploys'
+                    ],
+                    images: [
+                        'https://images.unsplash.com/photo-1607743386760-88ac62b89b8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+                        'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1488&q=80',
+                        'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+                    ],
+                    link: '#'
+                },
+                'ritech': {
+                    name: 'Ritech Fechaduras Digitais',
+                    category: 'E-commerce',
+                    client: 'Ritech',
+                    date: 'Junho 2024',
+                    technologies: ['HTML', 'CSS', 'JavaScript', 'AWS S3', 'CloudFront'],
+                    description: 'Site para empresa de fechaduras digitais com catálogo de produtos, informações sobre instalação e formulário de contato. O projeto foi desenvolvido com foco em performance e experiência do usuário.',
+                    features: [
+                        'Catálogo de produtos com imagens de alta qualidade',
+                        'Formulário de contato integrado',
+                        'Design responsivo para todos os dispositivos',
+                        'Hospedagem em AWS S3 com distribuição via CloudFront',
+                        'Otimização de imagens para carregamento rápido',
+                        'Integração com Google Analytics para métricas de acesso'
+                    ],
+                    images: [
+                        '../src/assets/images/LogoRitech.jpg',
+                        'https://images.unsplash.com/photo-1582139329536-e7284fece509?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80',
+                        'https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+                    ],
+                    link: 'https://ritech-fechaduras-digitais.sstechnologies-cloud.com/'
+                },
+                'stgbr': {
+                    name: 'Site Corporativo STGBR',
+                    category: 'Web Design',
+                    client: 'STGBR Tecnologia',
+                    date: 'Janeiro 2023',
+                    technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+                    description: 'Site corporativo moderno desenvolvido para a empresa STGBR Tecnologia. O projeto incluiu design responsivo, otimização para SEO e integração com formulário de contato.',
+                    features: [
+                        'Design responsivo para todos os dispositivos',
+                        'Animações suaves para melhor experiência do usuário',
+                        'Formulário de contato com validação',
+                        'Otimização para mecanismos de busca',
+                        'Integração com Google Analytics'
+                    ],
+                    images: [
+                        'https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80',
+                        'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+                        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+                    ],
+                    link: './images/portfolio/STGBR/index.html'
+                },
+                'base-imoveis': {
+                    name: 'Base Imóveis',
+                    category: 'Web Development',
+                    client: 'Base Imóveis',
+                    date: 'Julho 2023',
+                    technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL', 'Bootstrap'],
+                    description: 'Portal imobiliário completo desenvolvido para a imobiliária Base Imóveis, com sistema de busca avançada, catálogo de propriedades e área administrativa para gerenciamento de imóveis. O projeto foi implementado com foco em usabilidade e experiência do cliente final.',
+                    features: [
+                        'Sistema de busca avançada por região, tipo de imóvel, preço e características',
+                        'Galeria de imóveis com filtros personalizados e ordenação',
+                        'Páginas detalhadas para cada propriedade com galeria de fotos',
+                        'Formulário de contato para cada imóvel com envio direto para corretores',
+                        'Integração com Google Maps para localização dos imóveis',
+                        'Área administrativa para cadastro e gerenciamento de propriedades',
+                        'Design responsivo otimizado para dispositivos móveis'
+                    ],
+                    images: [
+                        'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+                        'https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1496&q=80',
+                        'https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+                    ],
+                    link: './images/portfolio/Base Imoveis/index.html'
+                },
+                'devaria': {
+                    name: 'Devaria - Rede Social',
+                    category: 'Full Stack Development',
+                    client: 'Projeto Pessoal',
+                    date: 'Abril 2024',
+                    technologies: ['React', 'Node.js', 'MongoDB', 'AWS'],
+                    description: 'Plataforma de rede social para desenvolvedores compartilharem projetos, conhecimentos e se conectarem com outros profissionais da área.',
+                    features: [
+                        'Autenticação de usuários',
+                        'Feed de postagens personalizado',
+                        'Sistema de mensagens diretas',
+                        'Compartilhamento de projetos com GitHub',
+                        'Fórum de discussão por categorias'
+                    ],
+                    images: [
+                        'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80',
+                        'https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80',
+                        'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+                    ],
+                    link: '#'
+                },
+                'automacao-sistemas': {
+                    name: 'Automação de Sistemas',
+                    category: 'Automação',
+                    client: 'Diversos',
+                    date: 'Contínuo',
+                    technologies: ['Python', 'Selenium', 'BeautifulSoup', 'Pandas'],
+                    description: 'Conjunto de scripts e ferramentas para automação de tarefas repetitivas em sistemas web e desktop, aumentando a produtividade e reduzindo erros humanos.',
+                    features: [
+                        'Web scraping para coleta de dados',
+                        'Automação de preenchimento de formulários',
+                        'Geração automática de relatórios',
+                        'Integração com APIs de terceiros',
+                        'Processamento de dados em lote'
+                    ],
+                    images: [
+                        'https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80',
+                        'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+                        'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+                    ],
+                    link: './images/portfolio/Automação de sistemas/index.html'
+                },
+                'aws-services': {
+                    name: 'AWS Services',
+                    category: 'Cloud Computing',
+                    client: 'Projetos Corporativos',
+                    date: 'Contínuo',
+                    technologies: ['AWS', 'CloudFormation', 'Lambda', 'S3', 'EC2', 'RDS'],
+                    description: 'Implementação e gerenciamento de infraestrutura em nuvem utilizando serviços AWS, com foco em escalabilidade, segurança e otimização de custos.',
+                    features: [
+                        'Infraestrutura como código (IaC)',
+                        'Arquitetura serverless',
+                        'Pipelines de CI/CD',
+                        'Monitoramento e alertas',
+                        'Backup e recuperação de desastres'
+                    ],
+                    images: [
+                        'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+                        'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+                        'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80'
+                    ],
+                    link: './images/portfolio/AWS Services/index.html'
+                }
+            };
+            
+            // Get project details container
+            const projectDetailsContainer = document.getElementById('project-details');
+            
+            // Check if project exists in data
+            if (projectId && projectsData[projectId]) {
+                const project = projectsData[projectId];
+                
+                // Build HTML for project details
+                let html = `
+                    <h1 class="text-3xl md:text-4xl font-bold mb-6 gradient-text">${project.name}</h1>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                        <div class="md:col-span-2">
+                            <div class="h-96 overflow-hidden rounded-xl mb-4 relative">
+                                <img src="${project.images[0]}" alt="${project.name}" class="w-full h-full object-cover">
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                ${project.images.slice(1).map(img => `
+                                    <div class="h-48 overflow-hidden rounded-xl relative">
+                                        <img src="${img}" alt="${project.name}" class="w-full h-full object-cover">
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="bg-gray-700 rounded-xl p-6 mb-6">
+                                <h3 class="text-xl font-bold mb-4">Informações do Projeto</h3>
+                                
+                                <div class="mb-4">
+                                    <h4 class="font-bold text-cyan-400">Categoria</h4>
+                                    <p>${project.category}</p>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h4 class="font-bold text-cyan-400">Cliente</h4>
+                                    <p>${project.client}</p>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h4 class="font-bold text-cyan-400">Data</h4>
+                                    <p>${project.date}</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-bold text-cyan-400">Tecnologias</h4>
+                                    <div class="flex flex-wrap gap-2 mt-2">
+                                        ${project.technologies.map(tech => `
+                                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">${tech}</span>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="block w-full bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg py-3 font-bold hover:opacity-90 transition-all text-center">
+                                ${projectId === 'devaria' || projectId === 'aws-services' || projectId === 'autodeploy' ? 'Em Desenvolvimento' : 'Ver Projeto'}
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">Descrição</h3>
+                            <p class="text-gray-300">${project.description}</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">Funcionalidades</h3>
+                            <ul class="list-disc pl-5 text-gray-300">
+                                ${project.features.map(feature => `
+                                    <li class="mb-2">${feature}</li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                
+                // Update container with project details
+                projectDetailsContainer.innerHTML = html;
+                
+                // Update page title
+                document.title = `${project.name} | Sergio Sena`;
+            } else {
+                // Project not found
+                projectDetailsContainer.innerHTML = `
+                    <div class="text-center py-12">
+                        <h2 class="text-3xl font-bold mb-4">Projeto não encontrado</h2>
+                        <p class="text-gray-300 mb-8">O projeto que você está procurando não existe ou foi removido.</p>
+                        <a href="index.html" class="px-8 py-3 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full font-bold hover:opacity-90 transition-all">
+                            Voltar para a página inicial
+                        </a>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

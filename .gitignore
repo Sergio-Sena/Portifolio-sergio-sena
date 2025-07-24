@@ -1,0 +1,50 @@
+# Dependências
+node_modules/
+vendor/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# Configurações do IDE
+.vscode/
+.idea/
+
+# Arquivos de build
+dist/
+build/
+out/
+
+# Variáveis de ambiente e credenciais
+.env
+.env.local
+.env.production
+.aws/
+config.json
+credentials.json
+
+# Projetos em desenvolvimento (não prontos para produção)
+src/assets/portfolio/Devaria/
+src/assets/portfolio/AWS Services/
+src/assets/portfolio/Automação de sistemas/
+src/assets/portfolio/Projeto AutoDeploy/
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.cache
+
+# Arquivos de backup
+*.bak
+*.backup
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos do Git
+.git/

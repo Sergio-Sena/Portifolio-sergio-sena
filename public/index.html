@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../src/assets/icons/Cloud.ico" type="x-icon">
+    <title>Portfólio | Sergio Sena</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../src/css/style.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+</head>
+<body class="min-h-screen">
+    <div class="grid-overlay"></div>
+    
+    <!-- Particles Background -->
+    <div id="particles-js" class="fixed top-0 left-0 w-full h-full z-0"></div>
+    
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-8 relative z-10">
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-center py-8">
+            <div class="flex items-center mb-6 md:mb-0">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center mr-4 neon-border overflow-hidden">
+                    <img src="../src/assets/images/Perfil foto.png" alt="Sergio Sena" class="w-full h-full object-cover">
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold gradient-text">Sergio Sena</h1>
+            </div>
+            
+            <nav class="flex space-x-1 md:space-x-6">
+                <a href="#online-projects" class="px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm md:text-base">ONLINE</a>
+                <a href="#projects" class="px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm md:text-base">DESENVOLVIMENTO</a>
+                <a href="#about" class="px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm md:text-base">SOBRE</a>
+                <a href="#contact" class="px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm md:text-base">CONTATO</a>
+            </nav>
+        </header>
+        
+        <!-- Hero Section -->
+        <section class="py-16 md:py-24 flex flex-col md:flex-row-reverse items-center">
+            <div class="md:w-1/2 flex justify-center mb-12 md:mb-0">
+                <div class="relative floating">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 opacity-20 absolute inset-0 m-auto blur-3xl"></div>
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-gray-900 rounded-2xl flex items-center justify-center neon-border relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Hero Image" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 md:pr-8">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text glow">DESENVOLVEDOR CLOUD</h2>
+                <p class="text-xl md:text-2xl mb-8 text-gray-300">O que realmente importa não é quantas tecnologias eu domino, mas a segurança e a clareza com que entrego soluções que funcionam.</p>
+                <div class="flex space-x-4">
+                    <a href="#online-projects" class="px-8 py-3 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full font-bold hover:opacity-90 transition-all">VER PORTFÓLIO</a>
+                    <a href="#contact" class="px-8 py-3 border border-cyan-400 rounded-full font-bold hover:bg-cyan-400 hover:bg-opacity-10 transition-all">CONTATE-ME</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Online Projects Section -->
+        <section id="online-projects" class="py-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">PROJETOS ONLINE</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Online Project - Ritech Fechaduras Digitais -->
+                <div class="bg-gray-800 rounded-2xl p-6 card-hover neon-border">
+                    <div class="h-48 overflow-hidden rounded-xl mb-4 relative">
+                        <img src="../src/assets/images/LogoRitech.jpg" alt="Ritech Fechaduras Digitais" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold">Ritech Fechaduras Digitais</h3>
+                            <p class="text-sm text-purple-300">HTML, CSS, JavaScript</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Site para empresa de fechaduras digitais com catálogo de produtos e formulário de contato.</p>
+                    <a href="https://ritech-fechaduras-digitais.sstechnologies-cloud.com/" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-purple-500 bg-opacity-20 rounded-full text-purple-300 hover:bg-opacity-30 transition-all">Ver Site</a>
+                    <a href="./project-details.html?project=ritech" class="inline-block px-4 py-2 bg-gray-700 bg-opacity-50 rounded-full text-gray-300 hover:bg-opacity-70 transition-all ml-2">Detalhes</a>
+                </div>
+                
+                <!-- Project 1 - Site Corporativo STGBR -->
+                <div class="bg-gray-800 rounded-2xl p-6 card-hover neon-border">
+                    <div class="h-48 overflow-hidden rounded-xl mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="Project 1" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold">Site Corporativo STGBR</h3>
+                            <p class="text-sm text-cyan-300">HTML, CSS, JavaScript</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Um site moderno para empresa de tecnologia com design responsivo e animações fluidas.</p>
+                    <a href="../src/assets/portfolio/STGBR/index.html" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-cyan-500 bg-opacity-20 rounded-full text-cyan-300 hover:bg-opacity-30 transition-all">Ver Projeto</a>
+                    <a href="./project-details.html?project=stgbr" class="inline-block px-4 py-2 bg-gray-700 bg-opacity-50 rounded-full text-gray-300 hover:bg-opacity-70 transition-all ml-2">Detalhes</a>
+                </div>
+                
+                <!-- Project 4 - Base Imóveis -->
+                <div class="bg-gray-800 rounded-2xl p-6 card-hover neon-border">
+                    <div class="h-48 overflow-hidden rounded-xl mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 4" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold">Base Imóveis</h3>
+                            <p class="text-sm text-amber-300">HTML, CSS, JavaScript</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Portal imobiliário com listagem de propriedades e sistema de busca por região.</p>
+                    <a href="../src/assets/portfolio/Base Imoveis/index.html" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-amber-500 bg-opacity-20 rounded-full text-amber-300 hover:bg-opacity-30 transition-all">Ver Projeto</a>
+                    <a href="./project-details.html?project=base-imoveis" class="inline-block px-4 py-2 bg-gray-700 bg-opacity-50 rounded-full text-gray-300 hover:bg-opacity-70 transition-all ml-2">Detalhes</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Development Projects Section -->
+        <section id="projects" class="py-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">PROJETOS EM DESENVOLVIMENTO</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 3 - Devaria -->
+                <div class="bg-gray-800 rounded-2xl p-6 card-hover neon-border">
+                    <div class="h-48 overflow-hidden rounded-xl mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Project 3" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold">Devaria</h3>
+                            <p class="text-sm text-pink-300">AWS Lambda, Node, NextJS</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Releitura de rede social utilizando tecnologias modernas e arquitetura serverless.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-pink-500 bg-opacity-20 rounded-full text-pink-300 hover:bg-opacity-30 transition-all">Em Desenvolvimento</a>
+                    <a href="./project-details.html?project=devaria" class="inline-block px-4 py-2 bg-gray-700 bg-opacity-50 rounded-full text-gray-300 hover:bg-opacity-70 transition-all ml-2">Detalhes</a>
+                </div>
+                
+                <!-- Project Card for AutoDeploy -->
+                <div class="bg-gray-800 rounded-2xl p-6 card-hover neon-border">
+                    <div class="h-48 overflow-hidden rounded-xl mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1607743386760-88ac62b89b8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="AutoDeploy Project" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold">AutoDeploy</h3>
+                            <p class="text-sm text-green-300">AWS, GitHub Actions, CI/CD</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Sistema de implantação automática para aplicações web com integração contínua e entrega contínua.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-green-500 bg-opacity-20 rounded-full text-green-300 hover:bg-opacity-30 transition-all">Em Desenvolvimento</a>
+                    <a href="./project-details.html?project=autodeploy" class="inline-block px-4 py-2 bg-gray-700 bg-opacity-50 rounded-full text-gray-300 hover:bg-opacity-70 transition-all ml-2">Detalhes</a>
+                </div>
+                
+                <!-- AWS S3 Explorer -->
+                <div class="bg-gray-800 rounded-2xl p-6 card-hover neon-border">
+                    <div class="h-48 overflow-hidden rounded-xl mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Online Project 1" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold">AWS S3 Explorer</h3>
+                            <p class="text-sm text-green-300">AWS, Cloud Architecture</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Arquitetura de soluções em nuvem com foco em serverless e otimização de custos.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-green-500 bg-opacity-20 rounded-full text-green-300 hover:bg-opacity-30 transition-all">Em Desenvolvimento</a>
+                    <a href="./project-details.html?project=aws-services" class="inline-block px-4 py-2 bg-gray-700 bg-opacity-50 rounded-full text-gray-300 hover:bg-opacity-70 transition-all ml-2">Detalhes</a>
+                </div>
+                
+                <!-- Automação de Sistemas -->
+                <div class="bg-gray-800 rounded-2xl p-6 card-hover neon-border">
+                    <div class="h-48 overflow-hidden rounded-xl mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Online Project 2" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold">Automação de Sistemas</h3>
+                            <p class="text-sm text-blue-300">Python, PySimpleGUI, Pandas</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Aplicação desktop para automatizar tarefas repetitivas de processamento de dados e geração de relatórios.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-blue-500 bg-opacity-20 rounded-full text-blue-300 hover:bg-opacity-30 transition-all">Ver Demo</a>
+                    <a href="./project-details.html?project=automacao-sistemas" class="inline-block px-4 py-2 bg-gray-700 bg-opacity-50 rounded-full text-gray-300 hover:bg-opacity-70 transition-all ml-2">Detalhes</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="py-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">SOBRE MIM</h2>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 opacity-20 absolute inset-0 m-auto blur-3xl"></div>
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-gray-900 rounded-full flex items-center justify-center neon-border relative overflow-hidden">
+                            <i class="fas fa-trophy text-yellow-400" style="font-size: 10rem;"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-2/3 md:pl-12">
+                    
+                    <p class="text-gray-300 mb-4">Sou desenvolvedor web e profissional de tecnologia com foco em soluções em nuvem (AWS), com experiência prática em projetos envolvendo arquitetura serverless, automação com Python e integrações modernas para aplicações web.</p>
+                    
+                    <p class="text-gray-300 mb-4">Antes de atuar na área de tecnologia, trabalhei por mais de 10 anos em setores de administração, controle de processos e atendimento ao cliente, o que me desenvolveu habilidades sólidas em organização, gestão de demandas e comunicação com equipes multidisciplinares.</p>
+                    
+                    <p class="text-gray-300 mb-4">Hoje, aplico esse conhecimento não apenas para desenvolver soluções eficientes, mas para entender o impacto que a tecnologia precisa gerar no negócio do cliente — seja otimizando fluxos, criando aplicações performáticas ou propondo arquiteturas seguras e escaláveis.</p>
+                    
+                    <p class="text-gray-300 mb-6"><strong>Minha missão:</strong> unir minha experiência técnica à minha vivência prática com gestão e processos para entregar soluções de tecnologia que geram valor real e medido.</p>
+                    
+                    <h4 class="text-xl font-bold mb-3 gradient-text">Formação Acadêmica</h4>
+                    <div class="mb-6">
+                        <div class="mb-3">
+                            <h5 class="font-bold">Centro Universitário UniFatecie</h5>
+                            <p class="text-gray-400 text-sm">Análise e Desenvolvimento de Sistemas</p>
+                            <p class="text-gray-300 mt-1">Início 05/2024 - Conclusão prevista: 06/2026</p>
+                        </div>
+                        <div>
+                            <h5 class="font-bold">Escola da Nuvem</h5>
+                            <p class="text-gray-400 text-sm">Arquiteto de Soluções em Tecnologia da Informação</p>
+                            <p class="text-gray-300 mt-1">Conclusão: 09/2023</p>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-bold mb-3 gradient-text">Certificações</h4>
+                    <div class="mb-6">
+                        <div class="mb-2">
+                            <h5 class="font-bold">AWS Certified Cloud Practitioner (CCP)</h5>
+                            <p class="text-gray-300 mt-1">AWS - 22/11/2023</p>
+                        </div>
+                        <div class="mb-2">
+                            <h5 class="font-bold">Fundamentos da Inteligência Artificial</h5>
+                            <p class="text-gray-300 mt-1">UniFatecie - 18/06/2024</p>
+                        </div>
+                        <div class="mb-2">
+                            <h5 class="font-bold">AWS Certified Cloud Developer (DVA C02)</h5>
+                            <p class="text-gray-300 mt-1">AWS - em progresso</p>
+                        </div>
+                        <div>
+                            <h5 class="font-bold">Introdução a qualidade de software</h5>
+                            <p class="text-gray-300 mt-1">DIO - 22/03/2022</p>
+                        </div>
+                        <div>
+                            <h5 class="font-bold">Devops e aws-solutions</h5>
+                            <p class="text-gray-300 mt-1">DIO - 06/06/2025</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <a href="./certificates.html" class="inline-block px-6 py-3 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full font-bold hover:opacity-90 transition-all">
+                            <i class="fas fa-certificate mr-2"></i> Ver Todos os Certificados
+                        </a>
+                    </div>
+                    
+                    <h4 class="text-xl font-bold mb-3 gradient-text">Habilidades</h4>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">AWS</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Cloud Computing</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Linux</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Windows</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">TypeScript</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">HTML</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">CSS</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">JavaScript</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">SQL</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">NoSQL</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Metodologias Ágeis</span>
+                    </div>
+                    
+                    <h4 class="text-xl font-bold mb-3 gradient-text">Minha Jornada Profissional</h4>
+                    <p class="text-gray-300 mb-6">
+                        Antes de ingressar na tecnologia, atuei em áreas administrativas, gestão de processos e atendimento ao cliente, onde desenvolvi habilidades de liderança, organização e foco em resultados. 
+                        Essas experiências me permitem hoje unir visão técnica com visão de negócios, entendendo melhor as dores e objetivos de cada projeto.
+                    </p>
+                    
+                    <div class="mb-4">
+                        <h5 class="font-bold">Desenvolvedor e Designer Autônomo</h5>
+                        <p class="text-gray-400 text-sm">Freelancer | 09/2023 - Presente</p>
+                        <p class="text-gray-300 mt-2">Criação de sites com HTML, CSS, JavaScript, PHP e MySQL. Suporte a clientes em sistemas em nuvem e servidores web. Design gráfico para redes sociais.</p>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">CONTATO</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Vamos conversar</h3>
+                    <p class="text-gray-300 mb-8">Estou disponível para novos projetos, consultorias e oportunidades de trabalho. Entre em contato para conversarmos!</p>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center mr-4">
+                            <i class="fas fa-envelope text-cyan-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Email</h4>
+                            <p class="text-gray-300"><a href="mailto:senanetworker@gmail.com" class="hover:text-cyan-400 transition-colors">senanetworker@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center mr-4">
+                            <i class="fas fa-phone text-cyan-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Telefone</h4>
+                            <p class="text-gray-300"><a href="https://wa.me/5511984969596" target="_blank" class="hover:text-cyan-400 transition-colors">(11) 98496-9596 <i class="fab fa-whatsapp text-green-400 ml-2"></i></a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center mr-4">
+                            <i class="fas fa-share-alt text-cyan-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Redes Sociais</h4>
+                            <div class="flex space-x-4 mt-2">
+                                <a href="https://github.com/Sergio-Sena" class="text-2xl text-gray-300 hover:text-cyan-400 transition-colors"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/sergio-sena-cloud" class="text-2xl text-gray-300 hover:text-cyan-400 transition-colors"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center mr-4">
+                            <i class="fas fa-map-marker-alt text-cyan-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Localização</h4>
+                            <p class="text-gray-300">SP / Capital</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form id="contactForm" class="bg-gray-800 p-8 rounded-2xl neon-border">
+                        <div class="mb-6">
+                            <label for="name" class="block mb-2 font-bold">Nome</label>
+                            <input type="text" id="name" name="name" class="w-full bg-gray-700 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Seu nome" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2 font-bold">Email</label>
+                            <input type="email" id="email" name="email" class="w-full bg-gray-700 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="seu.email@exemplo.com" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block mb-2 font-bold">Assunto</label>
+                            <input type="text" id="subject" name="subject" class="w-full bg-gray-700 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Assunto da mensagem">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2 font-bold">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" class="w-full bg-gray-700 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Sua mensagem..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg py-3 font-bold hover:opacity-90 transition-all">ENVIAR MENSAGEM</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="py-8 border-t border-gray-800 mt-16">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <p class="text-gray-400">&copy; 2024 Sergio Sena. Todos os direitos reservados.</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://github.com/Sergio-Sena" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/sergio-sena-cloud" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:senanetworker@gmail.com" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="../src/js/main.js"></script>
+    <script src="../src/js/components/contact.js"></script>
+    <script src="../src/data/projects.js"></script>
+</body>
+</html>
