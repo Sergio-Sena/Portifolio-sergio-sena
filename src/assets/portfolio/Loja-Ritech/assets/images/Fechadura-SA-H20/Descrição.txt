@@ -1,0 +1,8 @@
+DESCRIÇÃO:FD_H20 FACIAL
+Fechadura digital  de embutir com maquinario reforçado de “Padrão europeu” 
+Permite abertura por :
+-biometria 
+-senha 
+-tag de aproximidade 
+-reconhecimento facial 
+-aplicativo para abertura a distancia com captura de imagem

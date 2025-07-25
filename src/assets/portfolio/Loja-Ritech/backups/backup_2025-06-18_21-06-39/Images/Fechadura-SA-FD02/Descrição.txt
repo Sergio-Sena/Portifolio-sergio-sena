@@ -1,0 +1,9 @@
+DESCRIÇÃO:SD_FD02
+ Fechadura digital de embutir com acabamento perssonalizada em preto e bronze.
+Permite a abertura por :
+-biometria 
+-tag de proximidade 
+-senha 
+-chave de emergencia 
+-aplicativo TUYA  para abertura a distancia 
+-( INSTALAÇÃO INCLUSA SEM CUSTO ADICIONAL)

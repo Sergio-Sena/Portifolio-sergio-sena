@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <!-- Metadados essenciais -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Título e descrição otimizados para SEO -->
+    <title>Ritech Fechaduras Digitais | Instalação Profissional em SP</title>
+    <meta
+      name="description"
+      content="Fechaduras digitais de alta segurança com instalação profissional em São Paulo. Oferecemos modelos biométricos, por senha e com aplicativo. Garantia de 1 ano. Orçamento gratuito!"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.ritechfechaduras.com.br/" />
+
+    <!-- Open Graph para redes sociais -->
+    <meta
+      property="og:title"
+      content="Ritech Fechaduras Digitais | Segurança Inteligente"
+    />
+    <meta
+      property="og:description"
+      content="Fechaduras digitais de alta tecnologia com instalação profissional a partir de R$ 150,00"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.ritechfechaduras.com.br/" />
+    <meta
+      property="og:image"
+      content="https://www.ritechfechaduras.com.br/Images/LogoRitech.jpg"
+    />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ritech_fechaduras" />
+    <meta
+      name="twitter:title"
+      content="Ritech Fechaduras Digitais | Segurança Inteligente"
+    />
+    <meta
+      name="twitter:description"
+      content="Fechaduras digitais de alta tecnologia com instalação profissional a partir de R$ 150,00"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.ritechfechaduras.com.br/Images/LogoRitech.jpg"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="./Images/Logo-ritech-sem-fundo.png"
+      type="image/png"
+    />
+
+    <!-- Schema Markup Estruturado -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ritech Fechaduras Digitais",
+        "alternateName": "Ritech",
+        "url": "https://www.ritechfechaduras.com.br/",
+        "logo": "https://www.ritechfechaduras.com.br/Images/Logo-RiTec.jpg",
+        "sameAs": [
+          "https://www.instagram.com/ritech_fechaduras/",
+          "https://www.facebook.com/profile.php?id=61566083705332"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+5511966007636",
+          "contactType": "customer service"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "São Paulo",
+          "addressRegion": "SP",
+          "addressCountry": "Brasil"
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Ritech Fechaduras Digitais",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Exemplo, 123",
+          "addressLocality": "São Paulo",
+          "addressRegion": "SP",
+          "postalCode": "01000-000",
+          "addressCountry": "Brasil"
+        },
+        "telephone": "+5511966007636",
+        "openingHours": "Mo-Fr 09:00-18:00 Sa 10:00-14:00",
+        "priceRange": "$$"
+      }
+    </script>
+
+    <!-- Scripts e estilos -->
+    <script src="./js/scripts.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="gradient-bg min-h-screen text-white font-sans">
+    <!-- Header -->
+    <body class="gradient-bg min-h-screen text-white font-sans">
+      <!-- Header -->
+      <header class="gradient-bg shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-6 relative">
+          <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+              <img src="./Images/Logo-RiTec.jpg" alt="Logo Ritech" class="w-10 h-10" />
+              <h1 class="text-2xl font-bold neon-blue">
+                <a href="./Index.html">Ritech Fechaduras Digitais</a>
+              </h1>
+            </div>
+      
+            <!-- Menu Desktop -->
+            <nav aria-label="Menu principal" class="hidden md:block flex-grow text-right">
+              <ul class="flex justify-end space-x-6">
+                <li><a href="#produtos" class="hover:text-blue-200 transition">Produtos</a></li>
+                <li><a href="#servicos" class="hover:text-blue-200 transition">Serviços</a></li>
+                <li><a href="#contato" class="hover:text-blue-200 transition">Contato</a></li>
+              </ul>
+            </nav>
+      
+            <!-- Botão Mobile -->
+            <button id="menuToggle" class="md:hidden text-white focus:outline-none" aria-label="Abrir menu">
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+      
+          <!-- Menu Mobile Dropdown (Overlay à direita) -->
+          <nav id="mobileMenu" class="hidden md:hidden absolute right-4 top-full mt-2 bg-black bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg py-2 min-w-[160px] z-50">
+            <ul class="flex flex-col">
+              <li><a href="#produtos" class="block px-4 py-2 hover:bg-gray-700 transition">Produtos</a></li>
+              <li><a href="#servicos" class="block px-4 py-2 hover:bg-gray-700 transition">Serviços</a></li>
+              <li><a href="#contato" class="block px-4 py-2 hover:bg-gray-700 transition">Contato</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+
+    <!-- Hero Section -->
+    <main>
+      <section class="gradient-bg py-16">
+        <div
+          class="container mx-auto px-4 flex flex-col md:flex-row items-center"
+        >
+          <div class="md:w-1/2 mb-8 md:mb-0 fade-in">
+            <h2 class="text-4xl font-bold mb-4 neon-blue">
+              Segurança Inteligente para seu Lar e Negócio
+            </h2>
+            <p class="text-xl mb-6 text-slate-300">
+              🔐Na Ritech Fechaduras Digitais, unimos tecnologia, praticidade e
+              confiança para transformar sua casa ou empresa com soluções
+              modernas em fechaduras digitais.<br />
+              Controle total de acesso, onde você estiver.<br />
+              Tenha o controle de acesso na palma da mão.<br />
+              ✅ Instalação com garantia <br />
+              ✅ Atendimento personalizado <br />
+              ✅ Mais de 20 anos de experiência <br />
+              ✅ Instalação profissional | Produtos certificados<br />
+              👉Fale conosco via WhatsApp e solicite seu orçamento.<br />
+            </p>
+            <a
+              href="#produtos"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg hover:shadow-lg transition duration-300 inline-block glow"
+            >
+              Conheça nossos produtos <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+          <div class="md:w-1/2 flex justify-center">
+            <img
+              src="./Images/LogoRitech.jpg"
+              alt="Fechadura digital moderna"
+              class="rounded-lg shadow-xl max-w-md w-full neon-border"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Serviços -->
+      <section
+        id="servicos"
+        class="py-16 bg-slate-900 bg-opacity-70 backdrop-blur-md"
+      >
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-12 neon-blue">
+            Nossos Serviços
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card de serviço 1 -->
+            <article
+              class="bg-slate-800 bg-opacity-70 backdrop-blur-md p-8 rounded-xl shadow-md neon-border card-hover"
+            >
+              <div class="neon-blue mb-4">
+                <i class="fas fa-shield-alt text-4xl" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-white">
+                Manutenção Preventiva
+              </h3>
+              <p class="text-slate-300">
+                Serviço especializado para manter sua fechadura sempre em
+                perfeito estado, evitando falhas e prolongando sua vida útil.
+              </p>
+            </article>
+
+            <!-- Card de serviço 2 -->
+            <article
+              class="bg-slate-800 bg-opacity-70 backdrop-blur-md p-8 rounded-xl shadow-md neon-border card-hover"
+            >
+              <div class="neon-blue mb-4">
+                <i class="fas fa-headset text-4xl" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-white">
+                Suporte 7 dias por semana
+              </h3>
+              <p class="text-slate-300">
+                Assistência técnica especializada agende já seu horario
+              </p>
+            </article>
+
+            <!-- Card de serviço 3 -->
+            <article
+              class="bg-slate-800 bg-opacity-70 backdrop-blur-md p-8 rounded-xl shadow-md neon-border card-hover"
+            >
+              <div class="neon-blue mb-4">
+                <i class="fas fa-tools text-4xl" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-white">
+                Instalação Profissional
+              </h3>
+              <p class="text-slate-300">
+                Nossa equipe especializada realiza a instalação com precisão e
+                cuidado, garantindo o perfeito funcionamento da sua fechadura
+                digital.
+              </p>
+              <div class="mt-6">
+                <a
+                  href="./Precificacao.html#servicos"
+                  class="text-2xl font-bold neon-blue hover:text-blue-300 transition duration-300"
+                >
+                  Consulte valores aqui
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="produtos" class="py-16 bg-slate-900 bg-opacity-70 backdrop-blur-md">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-12 neon-blue">
+            Nossos Produtos
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Produto 1 -->
+            <article class="bg-slate-800 bg-opacity-70 backdrop-blur-md rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-xl neon-border">
+              <div class="aspect-video overflow-hidden relative">
+                <img
+                  src="./Images/Fechadura-SA-FD01/corrousel/Foto2.png"
+                  alt="Fechadura Digital Biométrica"
+                  class="w-full h-full object-cover cursor-pointer"
+                  data-gallery='["./Images/Fechadura-SA-FD01/corrousel/Foto1.png","./Images/Fechadura-SA-FD01/corrousel/Foto2.png","./Images/Fechadura-SA-FD01/corrousel/Foto3.png"]'
+                />
+                <button
+                  class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white py-2 px-4 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300 gallery-btn"
+                  onclick="openGallery(this)"
+                >
+                  Ver Galeria
+                </button>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-white mb-2">Modelo-FD21</h3>
+                <ul class="text-slate-300 mb-4 list-disc pl-5">
+                  <li>Biometria</li>
+                  <li>Tag de proximidade</li>
+                  <li>Senha</li>
+                  <li>Chave de emergência</li>
+                  <li>Aplicativo TUYA para abertura à distância</li>
+                  <li class="font-medium">Instalação inclusa sem custo adicional</li>
+                </ul>
+                <p>10 x de 89,00 no cartão</p>
+                <div class="flex justify-between items-center">
+                  <span class="text-2xl font-bold neon-blue" aria-label="Preço: R$ 899,00">R$ 890,00</span>
+                  <button class="comprar-btn bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg hover:shadow-lg transition duration-300">
+                    Comprar
+                  </button>
+                </div>
+                <p>Ou 680,00 à vista ou no pix</p>
+              </div>
+            </article>
+      
+            <!-- Produto 2 -->
+            <article class="bg-slate-800 bg-opacity-70 backdrop-blur-md rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-xl neon-border">
+              <div class="aspect-video overflow-hidden relative">
+                <img
+                  src="./Images/Fechadura-SA-FD02/corrousel/Foto_1.png"
+                  alt="Fechadura Digital com Senha"
+                  class="w-full h-full object-cover cursor-pointer"
+                  data-gallery='["./Images/Fechadura-SA-FD02/corrousel/Foto_1.png", "./Images/Fechadura-SA-FD02/corrousel/Foto_2.png","./Images/Fechadura-SA-FD02/corrousel/Foto_3.png","./Images/Fechadura-SA-FD02/corrousel/Foto_4.png"]'
+                />
+                <button
+                  class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white py-2 px-4 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300 gallery-btn"
+                  onclick="openGallery(this)"
+                >
+                  Ver Galeria
+                </button>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-white mb-2">Modelo-FD02</h3>
+                <ul class="text-slate-300 mb-4 list-disc pl-5">
+                  <li>Biometria</li>
+                  <li>Tag de proximidade</li>
+                  <li>Senha</li>
+                  <li>Chave de emergência</li>
+                  <li>Aplicativo TUYA para abertura à distância</li>
+                  <li class="font-medium">Instalação inclusa sem custo adicional</li>
+                </ul>10 x de 95,00 no cartão
+                <p></p>
+                <div class="flex justify-between items-center">
+                  <span class="text-2xl font-bold neon-blue" aria-label="Preço: R$ 950,00">R$ 950,00</span>
+                  <button class="comprar-btn bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg hover:shadow-lg transition duration-300">
+                    Comprar
+                  </button>
+                </div>
+              </div>
+            </article>
+      
+            <!-- Produto 3 -->
+            <article class="bg-slate-800 bg-opacity-70 backdrop-blur-md rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-xl neon-border">
+              <div class="aspect-video overflow-hidden relative">
+                <img
+                  src="./Images/Fechadura-SA-H12/corrousel/Foto_1.png"
+                  alt="Fechadura Digital Bluetooth"
+                  class="w-full h-full object-cover cursor-pointer"
+                  data-gallery='["./Images/Fechadura-SA-H12/corrousel/Foto_1.png", "./Images/Fechadura-SA-H12/corrousel/Foto_2.png","./Images/Fechadura-SA-H12/corrousel/Foto_3.png"]'
+                />
+                <button
+                  class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white py-2 px-4 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300 gallery-btn"
+                  onclick="openGallery(this)"
+                >
+                  Ver Galeria
+                </button>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-white mb-2">Modelo-H12</h3>
+                <ul class="text-slate-300 mb-4 list-disc pl-5">
+                  <li class="neon-blue">Fechadura digital de embutir com maquinario reforçado,”Padrão europeu” </li> 
+                  <li>Biometria</li>
+                  <li>Senha</li>
+                  <li>Tag de aproximação</li>
+                  <li>Chave de emergência</li>
+                  <li>Aplicativo com captura de imagem</li>
+                  <li>Visor digital integrado</li>
+                </ul>
+                <p>10 x de 155,00 no cartão</p>
+                <div class="flex justify-between items-center">
+                  <span class="text-2xl font-bold neon-blue" aria-label="Preço: R$ 1.550,00">R$ 1.550,00</span>
+                  <button class="comprar-btn bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg hover:shadow-lg transition duration-300">
+                    Comprar
+                  </button>
+                </div>
+              </div>
+            </article>
+      
+            <!-- Produto 4 -->
+            <article class="bg-slate-800 bg-opacity-70 backdrop-blur-md rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-xl neon-border">
+              <div class="aspect-video overflow-hidden relative">
+                <img
+                  src="./Images/Fechadura-SA-H20/corrousel/Foto_3.png"
+                  alt="Fechadura Digital Multifuncional"
+                  class="w-full h-full object-cover cursor-pointer"
+                  data-gallery='["./Images/Fechadura-SA-H20/corrousel/Foto_3.png", "./Images/Fechadura-SA-H20/corrousel/Foto_4.png"]'
+                />
+                <button
+                  class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white py-2 px-4 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300 gallery-btn"
+                  onclick="openGallery(this)"
+                >
+                  Ver Galeria
+                </button>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-white mb-2">Modelo-H20</h3>
+                <ul class="text-slate-300 mb-4 list-disc pl-5">
+                  <li class="neon-blue">Fechadura digital de embutir com maquinario reforçado,”Padrão europeu” </li>
+                  <li>Biometria</li>
+                  <li>Senha</li>
+                  <li>Tag de aproximação</li>
+                  <li>Reconhecimento facial</li>
+                  <li>Aplicativo com captura de imagem</li>
+                </ul>
+                <p>10 x de 195,00 no cartão</p>
+                <div class="flex justify-between items-center">
+                  <span class="text-2xl font-bold neon-blue" aria-label="Preço: R$ 1.950,00">R$ 1.950,00</span>
+                  <button class="comprar-btn bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg hover:shadow-lg transition duration-300">
+                    Comprar
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- Contato -->
+      <section
+        id="contato"
+        class="py-16 bg-slate-900 bg-opacity-70 backdrop-blur-md"
+      >
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-12 neon-blue">
+            Entre em Contato
+          </h2>
+          <div class="flex flex-col md:flex-row gap-12">
+            <div class="md:w-1/2">
+              <div
+                class="bg-slate-800 bg-opacity-70 backdrop-blur-md p-8 rounded-xl neon-border"
+              >
+                <h3 class="text-xl font-semibold mb-6 text-white">
+                  Fale conosco agora mesmo
+                </h3>
+                <div class="mb-8">
+                  <a
+                    href="https://wa.me/5511966007636"
+                    class="flex items-center bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg hover:shadow-lg transition duration-300 glow"
+                  >
+                    <i
+                      class="fab fa-whatsapp text-2xl mr-3"
+                      aria-hidden="true"
+                    ></i>
+                    <span class="font-bold">Chamar no WhatsApp</span>
+                  </a>
+                </div>
+                <div class="flex justify-center mb-8">
+                  <div
+                    id="qrcode"
+                    class="p-4 bg-white rounded-lg shadow-md neon-border"
+                    aria-label="QR Code para WhatsApp"
+                  ></div>
+                </div>
+                <p class="text-center text-slate-300 mb-6">
+                  Aponte a câmera do seu celular para o QR Code acima para
+                  iniciar uma conversa no WhatsApp
+                </p>
+                <div class="flex justify-center space-x-6">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61566083705332"
+                    class="text-blue-400 hover:text-blue-300 text-2xl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                  >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/ritech_fechaduras/"
+                    class="text-pink-400 hover:text-pink-300 text-2xl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                  >
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="md:w-1/2">
+              <!-- Formulário com envio para WhatsApp -->
+              <form
+                id="whatsappForm"
+                class="bg-slate-800 bg-opacity-70 backdrop-blur-md p-8 rounded-xl neon-border"
+                novalidate
+              >
+                <div class="mb-6">
+                  <label
+                    for="nome"
+                    class="block text-sm font-medium text-slate-300 mb-1"
+                    >Nome</label
+                  >
+                  <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    required
+                    class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Seu nome"
+                  />
+                </div>
+                <div class="mb-6">
+                  <label
+                    for="email"
+                    class="block text-sm font-medium text-slate-300 mb-1"
+                    >E-mail</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Seu e-mail"
+                  />
+                </div>
+                <div class="mb-6">
+                  <label
+                    for="telefone"
+                    class="block text-sm font-medium text-slate-300 mb-1"
+                    >Telefone</label
+                  >
+                  <input
+                    type="tel"
+                    id="telefone"
+                    name="telefone"
+                    required
+                    class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Seu telefone"
+                  />
+                </div>
+                <div class="mb-6">
+                  <label
+                    for="mensagem"
+                    class="block text-sm font-medium text-slate-300 mb-1"
+                    >Mensagem</label
+                  >
+                  <textarea
+                    id="mensagem"
+                    name="mensagem"
+                    rows="4"
+                    required
+                    class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Sua mensagem"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg hover:shadow-lg transition duration-300 glow"
+                >
+                  Enviar Mensagem
+                  <i class="fas fa-paper-plane ml-2" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg py-12">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between">
+          <div class="mb-8 md:mb-0">
+            <h3 class="text-xl font-bold mb-4 neon-blue">
+              Ritech Fechaduras Digitais
+            </h3>
+            <p class="mb-4 text-slate-300">Sua segurança em primeiro lugar.</p>
+            <p class="text-slate-400">
+              © 2023 Ritech. Todos os direitos reservados.
+            </p>
+          </div>
+          <div class="mb-8 md:mb-0">
+            <h3 class="text-xl font-bold mb-4 neon-blue">Links Úteis</h3>
+            <nav aria-label="Links úteis">
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="#produtos"
+                    class="text-slate-300 hover:text-blue-300 transition"
+                    >Produtos</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#servicos"
+                    class="text-slate-300 hover:text-blue-300 transition"
+                    >Serviços</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#contato"
+                    class="text-slate-300 hover:text-blue-300 transition"
+                    >Contato</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./Termos_privacidade.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-slate-300 hover:text-blue-300 transition"
+                  >
+                    Política de Privacidade
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4 neon-blue">Atendimento</h3>
+            <div class="flex items-center mb-2 text-slate-300">
+              <i class="fas fa-phone-alt mr-3 neon-blue" aria-hidden="true"></i>
+              <span>(11) 966007636</span>
+            </div>
+            <div class="flex items-center text-slate-300">
+              <i
+                class="fas fa-map-marker-alt mr-3 neon-blue"
+                aria-hidden="true"
+              ></i>
+              <span>São Paulo - SP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Botão flutuante WhatsApp -->
+    <a
+      href="https://wa.me/5511966007636"
+      class="fixed bottom-4 right-4 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition z-50 animate-pulse"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Fale conosco no WhatsApp"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-6 h-6 fill-current"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12.04 2.003c-5.53 0-10 4.47-10 10 0 1.77.46 3.5 1.34 5.02L2 22l5.14-1.35A9.96 9.96 0 0012.04 22c5.53 0 10-4.47 10-10s-4.47-10-10-10zm0 18c-1.56 0-3.09-.42-4.42-1.21l-.31-.18-3.05.8.82-2.97-.2-.32a8.004 8.004 0 118.16 3.88zm4.49-5.38c-.25-.13-1.49-.73-1.72-.82-.23-.09-.39-.13-.55.13s-.63.82-.77.99c-.14.17-.28.19-.52.06-.25-.13-1.06-.39-2.02-1.23-.75-.66-1.25-1.47-1.4-1.71-.15-.26-.02-.4.11-.53.11-.11.25-.28.37-.42.12-.14.17-.23.25-.38.08-.15.04-.28-.02-.4-.06-.13-.55-1.33-.76-1.82-.2-.48-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.28-.23.23-.88.86-.88 2.09s.91 2.42 1.03 2.59c.13.17 1.8 2.76 4.38 3.87.61.26 1.08.42 1.45.54.61.19 1.16.16 1.6.1.49-.07 1.49-.61 1.7-1.21.21-.59.21-1.09.14-1.21-.06-.12-.23-.18-.48-.31z"
+        />
+      </svg>
+    </a>
+
+    
+<!-- Modal de Galeria -->
+<div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-80 hidden justify-center items-center z-50">
+  <div class="relative w-3/4 max-w-2xl h-3/4">
+    
+    <!-- Botão Fechar com Font Awesome -->
+    <button id="closeGallery" class="absolute top-4 right-4 text-white text-2xl">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <!-- Conteúdo da Imagem -->
+    <div class="flex items-center justify-center h-full">
+      
+      <!-- Seta Esquerda -->
+      <button id="prevImage" class="absolute left-4 text-white text-4xl">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <!-- Imagem Expandida -->
+      <img id="expandedImage" src="" alt="Imagem Expandida" class="max-w-full max-h-full object-contain" />
+
+      <!-- Seta Direita -->
+      <button id="nextImage" class="absolute right-4 text-white text-4xl">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <!-- Painel de Descrição -->
+    <div id="imageDescription" class="mt-4 p-4 bg-slate-800 bg-opacity-70 backdrop-blur-md rounded-lg text-white">
+      <p id="descriptionText"></p>
+    </div>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
