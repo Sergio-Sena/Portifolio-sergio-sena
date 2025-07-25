@@ -1,0 +1,67 @@
+{
+    "CallerReference": "portfolio-20250125-new",
+    "Aliases": {
+        "Quantity": 1,
+        "Items": ["portfolio-sena-cloud.sstechnologies-cloud.com"]
+    },
+    "DefaultRootObject": "public/index.html",
+    "Origins": {
+        "Quantity": 1,
+        "Items": [
+            {
+                "Id": "portfolio-origin",
+                "DomainName": "portfolio-sergio-sena.s3.us-east-1.amazonaws.com",
+                "OriginPath": "",
+                "CustomHeaders": {"Quantity": 0},
+                "S3OriginConfig": {"OriginAccessIdentity": ""},
+                "ConnectionAttempts": 3,
+                "ConnectionTimeout": 10,
+                "OriginShield": {"Enabled": false},
+                "OriginAccessControlId": "E24VZWIM609OXN"
+            }
+        ]
+    },
+    "DefaultCacheBehavior": {
+        "TargetOriginId": "portfolio-origin",
+        "TrustedSigners": {"Enabled": false, "Quantity": 0},
+        "TrustedKeyGroups": {"Enabled": false, "Quantity": 0},
+        "ViewerProtocolPolicy": "redirect-to-https",
+        "AllowedMethods": {
+            "Quantity": 2,
+            "Items": ["HEAD", "GET"],
+            "CachedMethods": {"Quantity": 2, "Items": ["HEAD", "GET"]}
+        },
+        "SmoothStreaming": false,
+        "Compress": true,
+        "CachePolicyId": "4135ea2d-6df8-44a3-9df3-4b5a84be39ad",
+        "OriginRequestPolicyId": "88a5eaf4-2fd4-4709-b370-b4c650ea3fcf"
+    },
+    "CustomErrorResponses": {
+        "Quantity": 2,
+        "Items": [
+            {
+                "ErrorCode": 403,
+                "ResponsePagePath": "/public/error.html",
+                "ResponseCode": "404",
+                "ErrorCachingMinTTL": 300
+            },
+            {
+                "ErrorCode": 404,
+                "ResponsePagePath": "/public/error.html",
+                "ResponseCode": "404",
+                "ErrorCachingMinTTL": 300
+            }
+        ]
+    },
+    "Comment": "Portfolio Sergio Sena - CDN Dedicado",
+    "PriceClass": "PriceClass_100",
+    "Enabled": true,
+    "ViewerCertificate": {
+        "ACMCertificateArn": "arn:aws:acm:us-east-1:969430605054:certificate/aead7baa-e56f-411b-8e35-01577ed2738b",
+        "SSLSupportMethod": "sni-only",
+        "MinimumProtocolVersion": "TLSv1.2_2021",
+        "CertificateSource": "acm"
+    },
+    "HttpVersion": "http2",
+    "IsIPV6Enabled": true
+}

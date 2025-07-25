@@ -1,0 +1,41 @@
+{
+    "Comment": "Configurar DNS final - dev-cloud e ritech-fechaduras-digitais",
+    "Changes": [
+        {
+            "Action": "DELETE",
+            "ResourceRecordSet": {
+                "Name": "portfolio-sena-cloud.sstechnologies-cloud.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [{"Value": "d1isdj4wtq7ler.cloudfront.net"}]
+            }
+        },
+        {
+            "Action": "DELETE",
+            "ResourceRecordSet": {
+                "Name": "ritech-fechaduras-digitais-new.sstechnologies-cloud.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [{"Value": "d1i0zo3aiwb0ms.cloudfront.net"}]
+            }
+        },
+        {
+            "Action": "CREATE",
+            "ResourceRecordSet": {
+                "Name": "dev-cloud.sstechnologies-cloud.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [{"Value": "d1isdj4wtq7ler.cloudfront.net"}]
+            }
+        },
+        {
+            "Action": "CREATE",
+            "ResourceRecordSet": {
+                "Name": "ritech-fechaduras-digitais.sstechnologies-cloud.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [{"Value": "d1i0zo3aiwb0ms.cloudfront.net"}]
+            }
+        }
+    ]
+}

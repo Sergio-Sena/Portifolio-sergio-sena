@@ -1,0 +1,17 @@
+{
+    "Changes": [
+        {
+            "Action": "CREATE",
+            "ResourceRecordSet": {
+                "Name": "dev-cloud.sstechnologies-cloud.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [
+                    {
+                        "Value": "d300dg8l84vihh.cloudfront.net"
+                    }
+                ]
+            }
+        }
+    ]
+}

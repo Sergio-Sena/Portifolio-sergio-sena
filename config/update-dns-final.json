@@ -1,0 +1,23 @@
+{
+    "Comment": "Configurar DNS final com aliases corretos",
+    "Changes": [
+        {
+            "Action": "UPSERT",
+            "ResourceRecordSet": {
+                "Name": "dev-cloud.sstechnologies-cloud.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [{"Value": "d1isdj4wtq7ler.cloudfront.net"}]
+            }
+        },
+        {
+            "Action": "UPSERT",
+            "ResourceRecordSet": {
+                "Name": "ritech-fechaduras-digitais.sstechnologies-cloud.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [{"Value": "d1i0zo3aiwb0ms.cloudfront.net"}]
+            }
+        }
+    ]
+}

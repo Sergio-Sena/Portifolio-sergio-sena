@@ -1,0 +1,26 @@
+{
+  "active_distributions": {
+    "portfolio": {
+      "id": "E2O2ZMEA7SGXZ4",
+      "domain": "d1isdj4wtq7ler.cloudfront.net",
+      "alias": "dev-cloud.sstechnologies-cloud.com",
+      "bucket": "portfolio-sergio-sena",
+      "oac_id": "E24VZWIM609OXN",
+      "default_root_object": "public/index.html",
+      "comment": "Portfolio Sergio Sena - CDN Dedicado"
+    },
+    "ritech": {
+      "id": "EL2N09H69L9HV", 
+      "domain": "d1i0zo3aiwb0ms.cloudfront.net",
+      "alias": "ritech-fechaduras-digitais.sstechnologies-cloud.com",
+      "bucket": "ritech-fechaduras-site",
+      "oac_id": "EVCFOZYTHKYI3",
+      "default_root_object": "index.html",
+      "comment": "Ritech Fechaduras Digitais - CDN Dedicado"
+    }
+  },
+  "disabled_distributions": {
+    "E2DXHLX2VFCW6L": "Portfolio + Ritech - Aliases separados (DISABLED)",
+    "E2Y10FU5IQ01BZ": "Portfolio + Ritech - Dual site distribution (DELETED)"
+  }
+}

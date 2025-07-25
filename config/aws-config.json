@@ -1,0 +1,29 @@
+{
+  "production": {
+    "portfolio": {
+      "bucket": "portfolio-sergio-sena",
+      "cloudfront_id": "E2O2ZMEA7SGXZ4",
+      "domain": "dev-cloud.sstechnologies-cloud.com",
+      "cloudfront_url": "d1isdj4wtq7ler.cloudfront.net",
+      "oac_id": "E24VZWIM609OXN"
+    },
+    "ritech": {
+      "bucket": "ritech-fechaduras-site",
+      "cloudfront_id": "EL2N09H69L9HV",
+      "domain": "ritech-fechaduras-digitais.sstechnologies-cloud.com",
+      "cloudfront_url": "d1i0zo3aiwb0ms.cloudfront.net",
+      "oac_id": "EVCFOZYTHKYI3"
+    },
+    "dns": {
+      "hosted_zone_id": "Z07937031ROGP6XAEMPWJ",
+      "domain": "sstechnologies-cloud.com",
+      "certificate_arn": "arn:aws:acm:us-east-1:969430605054:certificate/aead7baa-e56f-411b-8e35-01577ed2738b"
+    },
+    "region": "us-east-1",
+    "iam_user": "deploy-user",
+    "iam_policies": [
+      "arn:aws:iam::969430605054:policy/PortfolioCI-CD-Policy",
+      "arn:aws:iam::969430605054:policy/PortfolioDeployPolicy"
+    ]
+  }
+}

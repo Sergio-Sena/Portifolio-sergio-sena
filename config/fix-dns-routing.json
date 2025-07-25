@@ -1,0 +1,29 @@
+{
+    "Comment": "Corrigir roteamento - usar CDNs existentes",
+    "Changes": [
+        {
+            "Action": "UPSERT",
+            "ResourceRecordSet": {
+                "Name": "dev-cloud.sstechnologies-cloud.com",
+                "Type": "A",
+                "AliasTarget": {
+                    "HostedZoneId": "Z2FDTNDATAQYW2",
+                    "DNSName": "d300dg8l84vihh.cloudfront.net",
+                    "EvaluateTargetHealth": false
+                }
+            }
+        },
+        {
+            "Action": "UPSERT",
+            "ResourceRecordSet": {
+                "Name": "ritech.sstechnologies-cloud.com",
+                "Type": "A",
+                "AliasTarget": {
+                    "HostedZoneId": "Z2FDTNDATAQYW2",
+                    "DNSName": "d1woz9qgfwb4as.cloudfront.net",
+                    "EvaluateTargetHealth": false
+                }
+            }
+        }
+    ]
+}

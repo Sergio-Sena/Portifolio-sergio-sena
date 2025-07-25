@@ -1,0 +1,40 @@
+{
+  "portfolio-policy": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "AllowCloudFrontServicePrincipal",
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "cloudfront.amazonaws.com"
+        },
+        "Action": "s3:GetObject",
+        "Resource": "arn:aws:s3:::portfolio-sergio-sena/*",
+        "Condition": {
+          "StringEquals": {
+            "AWS:SourceArn": "arn:aws:cloudfront::969430605054:distribution/E2O2ZMEA7SGXZ4"
+          }
+        }
+      }
+    ]
+  },
+  "ritech-policy": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "AllowCloudFrontServicePrincipal",
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "cloudfront.amazonaws.com"
+        },
+        "Action": "s3:GetObject",
+        "Resource": "arn:aws:s3:::ritech-fechaduras-site/*",
+        "Condition": {
+          "StringEquals": {
+            "AWS:SourceArn": "arn:aws:cloudfront::969430605054:distribution/EL2N09H69L9HV"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+    "Comment": "Limpar DNS não utilizados e configurar novos CDNs",
+    "Changes": [
+        {
+            "Action": "DELETE",
+            "ResourceRecordSet": {
+                "Name": "cloud.sstechnologies-cloud.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [{"Value": "d1woz9qgfwb4as.cloudfront.net"}]
+            }
+        },
+        {
+            "Action": "DELETE",
+            "ResourceRecordSet": {
+                "Name": "dev-cloud.sstechnologies-cloud.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [{"Value": "d1woz9qgfwb4as.cloudfront.net"}]
+            }
+        },
+        {
+            "Action": "DELETE",
+            "ResourceRecordSet": {
+                "Name": "portfolio-dev.sstechnologies-cloud.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [{"Value": "d1woz9qgfwb4as.cloudfront.net"}]
+            }
+        },
+        {
+            "Action": "DELETE",
+            "ResourceRecordSet": {
+                "Name": "ritech-fechaduras-digitais.sstechnologies-cloud.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [{"Value": "d300dg8l84vihh.cloudfront.net"}]
+            }
+        },
+        {
+            "Action": "DELETE",
+            "ResourceRecordSet": {
+                "Name": "ritech.sstechnologies-cloud.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [{"Value": "d1woz9qgfwb4as.cloudfront.net"}]
+            }
+        }
+    ]
+}

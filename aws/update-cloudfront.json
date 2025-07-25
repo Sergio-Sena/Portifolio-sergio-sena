@@ -1,0 +1,111 @@
+{
+  "Id": "E2DXHLX2VFCW6L",
+  "IfMatch": "EP1NAQY25H923",
+  "DistributionConfig": {
+    "CallerReference": "midia-devaria-1750103845",
+    "Aliases": {
+      "Quantity": 2,
+      "Items": [
+        "ritech-fechaduras-digitais.sstechnologies-cloud.com",
+        "dev-cloud.sstechnologies-cloud.com"
+      ]
+    },
+    "DefaultRootObject": "index.html",
+    "Origins": {
+      "Quantity": 3,
+      "Items": [
+        {
+          "Id": "S3-ritech-fechaduras",
+          "DomainName": "ritech-fechaduras-site.s3.us-east-1.amazonaws.com",
+          "OriginPath": "",
+          "S3OriginConfig": {
+            "OriginAccessIdentity": ""
+          },
+          "OriginAccessControlId": "E3CD3XFVCU0HA2"
+        },
+        {
+          "Id": "S3-portfolio",
+          "DomainName": "portfolio-sergio-sena.s3.us-east-1.amazonaws.com",
+          "OriginPath": "",
+          "S3OriginConfig": {
+            "OriginAccessIdentity": ""
+          },
+          "OriginAccessControlId": "E3CD3XFVCU0HA2"
+        },
+        {
+          "Id": "S3-midia-devaria",
+          "DomainName": "midia-devaria.s3.us-east-1.amazonaws.com",
+          "OriginPath": "",
+          "S3OriginConfig": {
+            "OriginAccessIdentity": ""
+          },
+          "OriginAccessControlId": "E358LCZDZI7VU4"
+        }
+      ]
+    },
+    "DefaultCacheBehavior": {
+      "TargetOriginId": "S3-ritech-fechaduras",
+      "ViewerProtocolPolicy": "redirect-to-https",
+      "AllowedMethods": {
+        "Quantity": 2,
+        "Items": ["HEAD", "GET"],
+        "CachedMethods": {
+          "Quantity": 2,
+          "Items": ["HEAD", "GET"]
+        }
+      },
+      "Compress": true,
+      "ForwardedValues": {
+        "QueryString": false,
+        "Cookies": {"Forward": "none"}
+      },
+      "DefaultTTL": 86400
+    },
+    "CacheBehaviors": {
+      "Quantity": 1,
+      "Items": [
+        {
+          "PathPattern": "/portfolio/*",
+          "TargetOriginId": "S3-portfolio",
+          "ViewerProtocolPolicy": "redirect-to-https",
+          "AllowedMethods": {
+            "Quantity": 2,
+            "Items": ["HEAD", "GET"],
+            "CachedMethods": {
+              "Quantity": 2,
+              "Items": ["HEAD", "GET"]
+            }
+          },
+          "Compress": true,
+          "ForwardedValues": {
+            "QueryString": false,
+            "Cookies": {"Forward": "none"}
+          },
+          "DefaultTTL": 3600
+        }
+      ]
+    },
+    "CustomErrorResponses": {
+      "Quantity": 2,
+      "Items": [
+        {
+          "ErrorCode": 403,
+          "ResponsePagePath": "/portfolio/error.html",
+          "ResponseCode": "404"
+        },
+        {
+          "ErrorCode": 404,
+          "ResponsePagePath": "/portfolio/error.html",
+          "ResponseCode": "404"
+        }
+      ]
+    },
+    "PriceClass": "PriceClass_100",
+    "Enabled": true,
+    "ViewerCertificate": {
+      "ACMCertificateArn": "arn:aws:acm:us-east-1:969430605054:certificate/aead7baa-e56f-411b-8e35-01577ed2738b",
+      "SSLSupportMethod": "sni-only",
+      "MinimumProtocolVersion": "TLSv1.2_2021"
+    }
+  }
+}

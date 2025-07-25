@@ -3,6 +3,7 @@ name: Deploy Portfolio to AWS
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -19,10 +20,21 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
         
-    - name: Sync files to S3
+    - name: Sync public files to S3
       run: |
-        aws s3 sync public/ s3://portfolio-sergio-sena --delete --exclude "*.git*"
+        aws s3 sync public/ s3://portfolio-sergio-sena/public/ --delete --exclude "*.git*"
+        
+    - name: Sync src files to S3
+      run: |
+        aws s3 sync src/ s3://portfolio-sergio-sena/src/ --delete --exclude "*.git*"
         
     - name: Invalidate CloudFront cache
       run: |
-        aws cloudfront create-invalidation --distribution-id E2DXHLX2VFCW6L --paths "/*"
+        aws cloudfront create-invalidation --distribution-id E2O2ZMEA7SGXZ4 --paths "/*"
+        
+    - name: Deployment notification
+      run: |
+        echo "✅ Portfolio deployed successfully!"
+        echo "🌐 URL: https://dev-cloud.sstechnologies-cloud.com"
+        echo "📦 CloudFront: E2O2ZMEA7SGXZ4"
+        echo "🪣 S3 Bucket: portfolio-sergio-sena"

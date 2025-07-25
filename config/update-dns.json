@@ -1,0 +1,38 @@
+{
+    "Comment": "Atualizar DNS para nova distribuicao CloudFront",
+    "Changes": [
+        {
+            "Action": "DELETE",
+            "ResourceRecordSet": {
+                "Name": "dev-cloud.sstechnologies-cloud.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [
+                    {"Value": "d300dg8l84vihh.cloudfront.net"}
+                ]
+            }
+        },
+        {
+            "Action": "CREATE",
+            "ResourceRecordSet": {
+                "Name": "dev-cloud.sstechnologies-cloud.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [
+                    {"Value": "d1woz9qgfwb4as.cloudfront.net"}
+                ]
+            }
+        },
+        {
+            "Action": "UPSERT",
+            "ResourceRecordSet": {
+                "Name": "ritech.sstechnologies-cloud.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [
+                    {"Value": "d1woz9qgfwb4as.cloudfront.net"}
+                ]
+            }
+        }
+    ]
+}

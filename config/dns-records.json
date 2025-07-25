@@ -1,0 +1,28 @@
+{
+  "hosted_zone": {
+    "id": "Z07937031ROGP6XAEMPWJ",
+    "domain": "sstechnologies-cloud.com"
+  },
+  "active_records": {
+    "dev-cloud.sstechnologies-cloud.com": {
+      "type": "CNAME",
+      "value": "d1isdj4wtq7ler.cloudfront.net",
+      "ttl": 300,
+      "target": "Portfolio"
+    },
+    "ritech-fechaduras-digitais.sstechnologies-cloud.com": {
+      "type": "CNAME", 
+      "value": "d1i0zo3aiwb0ms.cloudfront.net",
+      "ttl": 300,
+      "target": "Ritech"
+    }
+  },
+  "ssl_certificate": {
+    "arn": "arn:aws:acm:us-east-1:969430605054:certificate/aead7baa-e56f-411b-8e35-01577ed2738b",
+    "type": "wildcard",
+    "domains": [
+      "sstechnologies-cloud.com",
+      "*.sstechnologies-cloud.com"
+    ]
+  }
+}
