@@ -1,0 +1,70 @@
+/* Mobile Responsive Enhancements */
+
+/* Typography Scale */
+@media (max-width: 640px) {
+    .gradient-text {
+        background-size: 200% 200%;
+        animation: gradient-shift 3s ease infinite;
+    }
+    
+    /* Improved text readability */
+    p {
+        line-height: 1.6;
+    }
+    
+    /* Better spacing for mobile */
+    .section-spacing {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    /* Touch targets */
+    .touch-target {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Mobile-first animations */
+    .floating {
+        animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+    
+    /* Improved card hover for mobile */
+    .card-hover:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+    
+    /* Better focus states for accessibility */
+    .focus-visible:focus {
+        outline: 2px solid #06b6d4;
+        outline-offset: 2px;
+    }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    
+    .grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+    .floating,
+    .card-hover,
+    .transition-all {
+        animation: none;
+        transition: none;
+    }
+}
