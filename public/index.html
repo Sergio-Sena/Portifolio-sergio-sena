@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" href="../src/css/components/mobile-cards.css">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
 </head>
@@ -85,18 +86,20 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 md:px-0">
                 <!-- Online Project - Ritech Fechaduras Digitais -->
-                <div class="bg-gray-800 rounded-2xl p-6 card-hover neon-border">
-                    <div class="h-48 overflow-hidden rounded-xl mb-4 relative">
+                <div class="bg-gray-800 rounded-2xl p-4 md:p-6 card-hover neon-border">
+                    <div class="h-40 md:h-48 overflow-hidden rounded-xl mb-4 relative">
                         <img src="../src/assets/images/LogoRitech.jpg" alt="Ritech Fechaduras Digitais" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-                        <div class="absolute bottom-4 left-4">
-                            <h3 class="text-xl font-bold">Ritech Fechaduras Digitais</h3>
-                            <p class="text-sm text-purple-300">HTML, CSS, JavaScript</p>
+                        <div class="absolute bottom-2 md:bottom-4 left-2 md:left-4">
+                            <h3 class="text-lg md:text-xl font-bold">Ritech Fechaduras Digitais</h3>
+                            <p class="text-xs md:text-sm text-purple-300">HTML, CSS, JavaScript</p>
                         </div>
                     </div>
-                    <p class="text-gray-300 mb-4">Site para empresa de fechaduras digitais com catálogo de produtos e formulário de contato.</p>
-                    <a href="../src/assets/portfolio/Loja-Ritech/Index.html" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-purple-500 bg-opacity-20 rounded-full text-purple-300 hover:bg-opacity-30 transition-all">Ver Site</a>
-                    <a href="./project-details.html?project=ritech" class="inline-block px-4 py-2 bg-gray-700 bg-opacity-50 rounded-full text-gray-300 hover:bg-opacity-70 transition-all ml-2">Detalhes</a>
+                    <p class="text-gray-300 mb-4 text-sm md:text-base">Site para empresa de fechaduras digitais com catálogo de produtos e formulário de contato.</p>
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <a href="../src/assets/portfolio/Loja-Ritech/Index.html" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-purple-500 bg-opacity-20 rounded-full text-purple-300 hover:bg-opacity-30 transition-all text-center text-sm md:text-base min-h-[40px] flex items-center justify-center">Ver Site</a>
+                        <a href="./project-details.html?project=ritech" class="inline-block px-4 py-2 bg-gray-700 bg-opacity-50 rounded-full text-gray-300 hover:bg-opacity-70 transition-all text-center text-sm md:text-base min-h-[40px] flex items-center justify-center">Detalhes</a>
+                    </div>
                 </div>
                 
                 <!-- Project 1 - Site Corporativo STGBR -->
@@ -222,64 +225,64 @@
                     
                     <p class="text-gray-300 mb-6"><strong>Minha missão:</strong> unir minha experiência técnica à minha vivência prática com gestão e processos para entregar soluções de tecnologia que geram valor real e medido.</p>
                     
-                    <h4 class="text-xl font-bold mb-3 gradient-text">Formação Acadêmica</h4>
-                    <div class="mb-6">
+                    <h4 class="text-lg md:text-xl font-bold mb-3 gradient-text">Formação Acadêmica</h4>
+                    <div class="mb-4 md:mb-6">
                         <div class="mb-3">
-                            <h5 class="font-bold">Centro Universitário UniFatecie</h5>
-                            <p class="text-gray-400 text-sm">Análise e Desenvolvimento de Sistemas</p>
-                            <p class="text-gray-300 mt-1">Início 05/2024 - Conclusão prevista: 06/2026</p>
+                            <h5 class="font-bold text-sm md:text-base">Centro Universitário UniFatecie</h5>
+                            <p class="text-gray-400 text-xs md:text-sm">Análise e Desenvolvimento de Sistemas</p>
+                            <p class="text-gray-300 mt-1 text-xs md:text-sm">Início 05/2024 - Conclusão prevista: 06/2026</p>
                         </div>
                         <div>
-                            <h5 class="font-bold">Escola da Nuvem</h5>
-                            <p class="text-gray-400 text-sm">Arquiteto de Soluções em Tecnologia da Informação</p>
-                            <p class="text-gray-300 mt-1">Conclusão: 09/2023</p>
+                            <h5 class="font-bold text-sm md:text-base">Escola da Nuvem</h5>
+                            <p class="text-gray-400 text-xs md:text-sm">Arquiteto de Soluções em Tecnologia da Informação</p>
+                            <p class="text-gray-300 mt-1 text-xs md:text-sm">Conclusão: 09/2023</p>
                         </div>
                     </div>
                     
-                    <h4 class="text-xl font-bold mb-3 gradient-text">Certificações</h4>
-                    <div class="mb-6">
+                    <h4 class="text-lg md:text-xl font-bold mb-3 gradient-text">Certificações</h4>
+                    <div class="mb-4 md:mb-6">
                         <div class="mb-2">
-                            <h5 class="font-bold">AWS Certified Cloud Practitioner (CCP)</h5>
-                            <p class="text-gray-300 mt-1">AWS - 22/11/2023</p>
+                            <h5 class="font-bold text-sm md:text-base">AWS Certified Cloud Practitioner (CCP)</h5>
+                            <p class="text-gray-300 mt-1 text-xs md:text-sm">AWS - 22/11/2023</p>
                         </div>
                         <div class="mb-2">
-                            <h5 class="font-bold">Fundamentos da Inteligência Artificial</h5>
-                            <p class="text-gray-300 mt-1">UniFatecie - 18/06/2024</p>
+                            <h5 class="font-bold text-sm md:text-base">Fundamentos da Inteligência Artificial</h5>
+                            <p class="text-gray-300 mt-1 text-xs md:text-sm">UniFatecie - 18/06/2024</p>
                         </div>
                         <div class="mb-2">
-                            <h5 class="font-bold">AWS Certified Cloud Developer (DVA C02)</h5>
-                            <p class="text-gray-300 mt-1">AWS - em progresso</p>
+                            <h5 class="font-bold text-sm md:text-base">AWS Certified Cloud Developer (DVA C02)</h5>
+                            <p class="text-gray-300 mt-1 text-xs md:text-sm">AWS - em progresso</p>
+                        </div>
+                        <div class="mb-2">
+                            <h5 class="font-bold text-sm md:text-base">Introdução a qualidade de software</h5>
+                            <p class="text-gray-300 mt-1 text-xs md:text-sm">DIO - 22/03/2022</p>
                         </div>
                         <div>
-                            <h5 class="font-bold">Introdução a qualidade de software</h5>
-                            <p class="text-gray-300 mt-1">DIO - 22/03/2022</p>
-                        </div>
-                        <div>
-                            <h5 class="font-bold">Devops e aws-solutions</h5>
-                            <p class="text-gray-300 mt-1">DIO - 06/06/2025</p>
+                            <h5 class="font-bold text-sm md:text-base">Devops e aws-solutions</h5>
+                            <p class="text-gray-300 mt-1 text-xs md:text-sm">DIO - 06/06/2025</p>
                         </div>
                     </div>
                     
                     <div class="mt-4">
-                        <a href="./certificates.html" class="inline-block px-6 py-3 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full font-bold hover:opacity-90 transition-all">
+                        <a href="./certificates.html" class="inline-block px-4 md:px-6 py-3 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full font-bold hover:opacity-90 transition-all text-sm md:text-base min-h-[44px] flex items-center justify-center">
                             <i class="fas fa-certificate mr-2"></i> Ver Todos os Certificados
                         </a>
                     </div>
                     
                     <h4 class="text-lg md:text-xl font-bold mb-3 gradient-text">Habilidades</h4>
-                    <div class="flex flex-wrap gap-2 mb-4 md:mb-6">
-                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">AWS</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Cloud Computing</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Linux</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Windows</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">TypeScript</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Python</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">HTML</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">CSS</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">JavaScript</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">SQL</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">NoSQL</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Metodologias Ágeis</span>
+                    <div class="flex flex-wrap gap-1.5 md:gap-2 mb-4 md:mb-6">
+                        <span class="px-2 md:px-3 py-1 bg-gray-800 rounded-full text-xs md:text-sm">AWS</span>
+                        <span class="px-2 md:px-3 py-1 bg-gray-800 rounded-full text-xs md:text-sm">Cloud Computing</span>
+                        <span class="px-2 md:px-3 py-1 bg-gray-800 rounded-full text-xs md:text-sm">Linux</span>
+                        <span class="px-2 md:px-3 py-1 bg-gray-800 rounded-full text-xs md:text-sm">Windows</span>
+                        <span class="px-2 md:px-3 py-1 bg-gray-800 rounded-full text-xs md:text-sm">TypeScript</span>
+                        <span class="px-2 md:px-3 py-1 bg-gray-800 rounded-full text-xs md:text-sm">Python</span>
+                        <span class="px-2 md:px-3 py-1 bg-gray-800 rounded-full text-xs md:text-sm">HTML</span>
+                        <span class="px-2 md:px-3 py-1 bg-gray-800 rounded-full text-xs md:text-sm">CSS</span>
+                        <span class="px-2 md:px-3 py-1 bg-gray-800 rounded-full text-xs md:text-sm">JavaScript</span>
+                        <span class="px-2 md:px-3 py-1 bg-gray-800 rounded-full text-xs md:text-sm">SQL</span>
+                        <span class="px-2 md:px-3 py-1 bg-gray-800 rounded-full text-xs md:text-sm">NoSQL</span>
+                        <span class="px-2 md:px-3 py-1 bg-gray-800 rounded-full text-xs md:text-sm">Metodologias Ágeis</span>
                     </div>
                     
                     <h4 class="text-lg md:text-xl font-bold mb-3 gradient-text">Minha Jornada Profissional</h4>

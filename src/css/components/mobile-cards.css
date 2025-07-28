@@ -1,0 +1,44 @@
+/* Mobile Card Optimizations */
+@media (max-width: 768px) {
+    .project-card {
+        padding: 1rem;
+    }
+    
+    .project-card h3 {
+        font-size: 1.125rem;
+        line-height: 1.4;
+    }
+    
+    .project-card p {
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+    
+    .project-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .project-buttons a {
+        text-align: center;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.875rem;
+    }
+    
+    .skill-tag {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .contact-info h4 {
+        font-size: 0.875rem;
+    }
+    
+    .contact-info p {
+        font-size: 0.875rem;
+    }
+}
