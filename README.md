@@ -5,7 +5,7 @@ Este é o repositório do site de portfólio de Sergio Sena, desenvolvedor web e
 ## 🌐 URLs de Produção
 
 - **Portfolio**: https://dev-cloud.sstechnologies-cloud.com
-- **Ritech**: https://ritech-fechaduras-digitais.sstechnologies-cloud.com
+
 
 ## 🚀 Status da Branch Main
 
