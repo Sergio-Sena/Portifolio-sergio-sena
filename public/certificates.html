@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../src/css/style.css">
     <link rel="stylesheet" href="../src/css/components/portfolio-compat.css">
     <link rel="stylesheet" href="../src/css/components/credly-badge.css">
+    <link rel="stylesheet" href="../src/css/components/mobile-cards.css">
+    <link rel="stylesheet" href="../src/css/components/mobile-responsive.css">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body class="min-h-screen">
@@ -19,38 +21,61 @@
     <div id="particles-js" class="fixed top-0 left-0 w-full h-full z-0"></div>
     
     <!-- Main Container -->
-    <div class="container mx-auto px-4 py-8 relative z-10">
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 py-4 md:py-8 relative z-10 max-w-7xl">
         <!-- Header -->
-        <header class="flex flex-col md:flex-row justify-between items-center py-8">
-            <div class="flex items-center mb-6 md:mb-0">
-                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center mr-4 neon-border overflow-hidden">
+        <header class="flex justify-between items-center py-4 md:py-8">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center mr-3 md:mr-4 neon-border overflow-hidden">
                     <img src="../src/assets/images/Perfil foto.png" alt="Sergio Sena" class="w-full h-full object-cover">
                 </div>
-                <h1 class="text-3xl md:text-4xl font-bold gradient-text">Sergio Sena</h1>
+                <h1 class="text-xl md:text-3xl lg:text-4xl font-bold gradient-text">Sergio Sena</h1>
             </div>
             
-            <nav class="flex space-x-1 md:space-x-6">
-                <a href="index.html#online-projects" class="px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm md:text-base">ONLINE</a>
-                <a href="index.html#projects" class="px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm md:text-base">DESENVOLVIMENTO</a>
-                <a href="index.html#about" class="px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm md:text-base">SOBRE</a>
-                <a href="index.html#contact" class="px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm md:text-base">CONTATO</a>
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1">
+                <span class="w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
+                <span class="w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
+                <span class="w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
+            </button>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-2 lg:space-x-6">
+                <a href="index.html#online-projects" class="px-3 lg:px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm lg:text-base">ONLINE</a>
+                <a href="index.html#projects" class="px-3 lg:px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm lg:text-base">DESENVOLVIMENTO</a>
+                <a href="index.html#about" class="px-3 lg:px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm lg:text-base">SOBRE</a>
+                <a href="index.html#contact" class="px-3 lg:px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm lg:text-base">CONTATO</a>
             </nav>
         </header>
         
+        <!-- Mobile Navigation Menu -->
+        <nav id="mobileMenu" class="md:hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-95 backdrop-blur-sm z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex flex-col items-center justify-center h-full space-y-8">
+                <button id="closeMobileMenu" class="absolute top-6 right-6 text-white text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <a href="index.html#online-projects" class="mobile-nav-link text-2xl font-bold text-white hover:text-cyan-400 transition-colors font-orbitron">ONLINE</a>
+                <a href="index.html#projects" class="mobile-nav-link text-2xl font-bold text-white hover:text-cyan-400 transition-colors font-orbitron">DESENVOLVIMENTO</a>
+                <a href="index.html#about" class="mobile-nav-link text-2xl font-bold text-white hover:text-cyan-400 transition-colors font-orbitron">SOBRE</a>
+                <a href="index.html#contact" class="mobile-nav-link text-2xl font-bold text-white hover:text-cyan-400 transition-colors font-orbitron">CONTATO</a>
+            </div>
+        </nav>
+        
         <!-- Certificates Section -->
-        <section class="py-16">
-            <div class="mb-8">
-                <a href="index.html" class="inline-flex items-center text-cyan-400 hover:underline">
+        <section class="py-8 md:py-16">
+            <div class="mb-6 md:mb-8 px-4 md:px-0">
+                <a href="index.html" class="inline-flex items-center text-cyan-400 hover:underline text-sm md:text-base">
                     <i class="fas fa-arrow-left mr-2"></i> Voltar para a página inicial
                 </a>
             </div>
             
-            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center gradient-text">CERTIFICADOS E BADGES</h2>
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-center gradient-text px-4 md:px-0">CERTIFICADOS E BADGES</h2>
             
             <!-- Filter Controls -->
-            <div class="max-w-md mx-auto mb-12">
-                <label for="category-filter" class="block mb-2 font-bold text-center">Filtrar por categoria</label>
-                <select id="category-filter" class="w-full bg-gray-700 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+            <div class="max-w-md mx-auto mb-8 md:mb-12 px-4 md:px-0">
+                <label for="category-filter" class="block mb-2 font-bold text-center text-sm md:text-base">Filtrar por categoria</label>
+                <select id="category-filter" class="w-full bg-gray-700 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 text-sm md:text-base">
                     <option value="all">Todas as categorias</option>
                     <option value="aws">AWS</option>
                     <option value="cloud">Cloud Computing</option>
@@ -60,10 +85,10 @@
             </div>
             
             <!-- AWS Certificates -->
-            <div class="mb-16">
-                <h3 class="text-2xl font-bold mb-6 text-cyan-400">Certificações AWS</h3>
+            <div class="mb-12 md:mb-16">
+                <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-cyan-400 px-4 md:px-0">Certificações AWS</h3>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 md:px-0">
                     <!-- AWS Developer Associate (Em progresso) (09/2025) -->
                     <div class="bg-gray-800 rounded-2xl p-6 card-hover neon-border certificate-card" data-category="aws">
                         <div class="text-center mb-3">
@@ -121,10 +146,10 @@
             </div>
             
             <!-- Educational Certificates -->
-            <div class="mb-16">
-                <h3 class="text-2xl font-bold mb-6 text-purple-400">Certificados Educacionais</h3>
+            <div class="mb-12 md:mb-16">
+                <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-purple-400 px-4 md:px-0">Certificados Educacionais</h3>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 md:px-0">
                     <!-- DevOps e AWS Solutions (06/06/2025) -->
                     <div class="bg-gray-800 rounded-2xl p-6 card-hover neon-border certificate-card" data-category="cloud">
                         <div class="text-center mb-3">
@@ -256,16 +281,16 @@
             </div>
         
         <!-- Footer -->
-        <footer class="py-8 border-t border-gray-800 mt-16">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <p class="text-gray-400">&copy; 2024 Sergio Sena. Todos os direitos reservados.</p>
+        <footer class="py-6 md:py-8 border-t border-gray-800 mt-8 md:mt-16">
+            <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-0">
+                <div class="mb-4 md:mb-0 text-center md:text-left">
+                    <p class="text-gray-400 text-sm md:text-base">&copy; 2024 Sergio Sena. Todos os direitos reservados.</p>
                 </div>
                 
                 <div class="flex space-x-6">
-                    <a href="https://github.com/sergio-sena" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/sergio-sena-cloud" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:senanetworker@gmail.com" class="text-gray-400 hover:text-cyan-400 transition-colors"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/sergio-sena" class="text-gray-400 hover:text-cyan-400 transition-colors text-xl md:text-base"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/sergio-sena-cloud" class="text-gray-400 hover:text-cyan-400 transition-colors text-xl md:text-base"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:senanetworker@gmail.com" class="text-gray-400 hover:text-cyan-400 transition-colors text-xl md:text-base"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </footer>
@@ -273,6 +298,7 @@
     
     <!-- Scripts -->
     <script src="../src/js/main.js"></script>
+    <script src="../src/js/components/mobile-menu.js"></script>
     <script src="../src/data/certificates.js"></script>
     <script src="../src/js/pages/certificates.js" defer></script>
     <script>
