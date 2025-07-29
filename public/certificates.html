@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../src/css/components/mobile-cards.css">
     <link rel="stylesheet" href="../src/css/components/mobile-responsive.css">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../src/js/translations.js"></script>
 </head>
 <body class="min-h-screen">
     <div class="grid-overlay"></div>
@@ -39,12 +40,24 @@
                 <span class="w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
             </button>
             
+            <!-- Language Toggle Mobile -->
+            <button id="langToggle" onclick="toggleLanguage()" class="md:hidden mr-4 px-3 py-1 bg-gray-800 rounded-full text-sm hover:bg-gray-700 transition-all flex items-center space-x-1">
+                <i class="fas fa-globe text-xs"></i>
+                <span id="langText" data-translate="lang.button">EN</span>
+            </button>
+            
             <!-- Desktop Navigation -->
-            <nav class="hidden md:flex space-x-2 lg:space-x-6">
-                <a href="index.html#online-projects" class="px-3 lg:px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm lg:text-base">ONLINE</a>
-                <a href="index.html#projects" class="px-3 lg:px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm lg:text-base">DESENVOLVIMENTO</a>
-                <a href="index.html#about" class="px-3 lg:px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm lg:text-base">SOBRE</a>
-                <a href="index.html#contact" class="px-3 lg:px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm lg:text-base">CONTATO</a>
+            <nav class="hidden md:flex space-x-2 lg:space-x-6 items-center">
+                <a href="index.html#online-projects" class="px-3 lg:px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm lg:text-base" data-translate="nav.online">ONLINE</a>
+                <a href="index.html#projects" class="px-3 lg:px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm lg:text-base" data-translate="nav.development">DESENVOLVIMENTO</a>
+                <a href="index.html#about" class="px-3 lg:px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm lg:text-base" data-translate="nav.about">SOBRE</a>
+                <a href="index.html#contact" class="px-3 lg:px-4 py-2 rounded-full hover:bg-gray-800 transition-all font-orbitron text-sm lg:text-base" data-translate="nav.contact">CONTATO</a>
+                
+                <!-- Desktop Language Toggle -->
+                <button id="langToggleDesktop" onclick="toggleLanguage()" class="px-3 py-1 bg-gray-800 rounded-full text-sm hover:bg-gray-700 transition-all flex items-center space-x-1 ml-4">
+                    <i class="fas fa-globe text-xs"></i>
+                    <span id="langTextDesktop" data-translate="lang.button">EN</span>
+                </button>
             </nav>
         </header>
         
@@ -55,10 +68,10 @@
                     <i class="fas fa-times"></i>
                 </button>
                 
-                <a href="index.html#online-projects" class="mobile-nav-link text-2xl font-bold text-white hover:text-cyan-400 transition-colors font-orbitron">ONLINE</a>
-                <a href="index.html#projects" class="mobile-nav-link text-2xl font-bold text-white hover:text-cyan-400 transition-colors font-orbitron">DESENVOLVIMENTO</a>
-                <a href="index.html#about" class="mobile-nav-link text-2xl font-bold text-white hover:text-cyan-400 transition-colors font-orbitron">SOBRE</a>
-                <a href="index.html#contact" class="mobile-nav-link text-2xl font-bold text-white hover:text-cyan-400 transition-colors font-orbitron">CONTATO</a>
+                <a href="index.html#online-projects" class="mobile-nav-link text-2xl font-bold text-white hover:text-cyan-400 transition-colors font-orbitron" data-translate="nav.online">ONLINE</a>
+                <a href="index.html#projects" class="mobile-nav-link text-2xl font-bold text-white hover:text-cyan-400 transition-colors font-orbitron" data-translate="nav.development">DESENVOLVIMENTO</a>
+                <a href="index.html#about" class="mobile-nav-link text-2xl font-bold text-white hover:text-cyan-400 transition-colors font-orbitron" data-translate="nav.about">SOBRE</a>
+                <a href="index.html#contact" class="mobile-nav-link text-2xl font-bold text-white hover:text-cyan-400 transition-colors font-orbitron" data-translate="nav.contact">CONTATO</a>
             </div>
         </nav>
         
@@ -66,17 +79,17 @@
         <section class="py-8 md:py-16">
             <div class="mb-6 md:mb-8 px-4 md:px-0">
                 <a href="index.html" class="inline-flex items-center text-cyan-400 hover:underline text-sm md:text-base">
-                    <i class="fas fa-arrow-left mr-2"></i> Voltar para a página inicial
+                    <i class="fas fa-arrow-left mr-2"></i> <span data-translate="certificates.back">Voltar para a página inicial</span>
                 </a>
             </div>
             
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-center gradient-text px-4 md:px-0">CERTIFICADOS E BADGES</h2>
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-center gradient-text px-4 md:px-0" data-translate="certificates.title">CERTIFICADOS E BADGES</h2>
             
             <!-- Filter Controls -->
             <div class="max-w-md mx-auto mb-8 md:mb-12 px-4 md:px-0">
-                <label for="category-filter" class="block mb-2 font-bold text-center text-sm md:text-base">Filtrar por categoria</label>
+                <label for="category-filter" class="block mb-2 font-bold text-center text-sm md:text-base" data-translate="certificates.filter">Filtrar por categoria</label>
                 <select id="category-filter" class="w-full bg-gray-700 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 text-sm md:text-base">
-                    <option value="all">Todas as categorias</option>
+                    <option value="all" data-translate="certificates.all">Todas as categorias</option>
                     <option value="aws">AWS</option>
                     <option value="cloud">Cloud Computing</option>
                     <option value="development">Desenvolvimento</option>
@@ -86,7 +99,7 @@
             
             <!-- AWS Certificates -->
             <div class="mb-12 md:mb-16">
-                <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-cyan-400 px-4 md:px-0">Certificações AWS</h3>
+                <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-cyan-400 px-4 md:px-0" data-translate="certificates.aws.title">Certificações AWS</h3>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 md:px-0">
                     <!-- AWS Developer Associate (Em progresso) (09/2025) -->
@@ -147,7 +160,7 @@
             
             <!-- Educational Certificates -->
             <div class="mb-12 md:mb-16">
-                <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-purple-400 px-4 md:px-0">Certificados Educacionais</h3>
+                <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-purple-400 px-4 md:px-0" data-translate="certificates.education.title">Certificados Educacionais</h3>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 md:px-0">
                     <!-- DevOps e AWS Solutions (06/06/2025) -->
@@ -284,7 +297,7 @@
         <footer class="py-6 md:py-8 border-t border-gray-800 mt-8 md:mt-16">
             <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-0">
                 <div class="mb-4 md:mb-0 text-center md:text-left">
-                    <p class="text-gray-400 text-sm md:text-base">&copy; 2024 Sergio Sena. Todos os direitos reservados.</p>
+                    <p class="text-gray-400 text-sm md:text-base">&copy; 2024 Sergio Sena. <span data-translate="footer.rights">Todos os direitos reservados.</span></p>
                 </div>
                 
                 <div class="flex space-x-6">
