@@ -49,11 +49,11 @@ const projectsTranslations = {
             date: 'Julho 2024'
         },
         'aws-services': {
-            name: 'AWS S3 Explorer',
-            description: 'Arquitetura de soluções em nuvem com foco em serverless e otimização de custos.',
-            category: 'Cloud Architecture',
+            name: 'AWS Services Dashboard',
+            description: 'Aplicação moderna para gerenciar buckets e objetos do Amazon S3 com interface neon cyberpunk.',
+            category: 'Cloud Computing',
             client: 'Projetos Corporativos',
-            date: 'Em desenvolvimento'
+            date: 'Janeiro 2025'
         },
         'automacao-sistemas': {
             name: 'Automação de Sistemas',
@@ -109,11 +109,11 @@ const projectsTranslations = {
             date: 'July 2024'
         },
         'aws-services': {
-            name: 'AWS S3 Explorer',
-            description: 'Cloud solutions architecture focused on serverless and cost optimization.',
-            category: 'Cloud Architecture',
+            name: 'AWS Services Dashboard',
+            description: 'Modern application to manage Amazon S3 buckets and objects with cyberpunk neon interface.',
+            category: 'Cloud Computing',
             client: 'Corporate Projects',
-            date: 'In development'
+            date: 'January 2025'
         },
         'automacao-sistemas': {
             name: 'Systems Automation',

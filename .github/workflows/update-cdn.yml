@@ -1,0 +1,51 @@
+name: Update Wildcard CDN
+
+on:
+  workflow_dispatch:
+    inputs:
+      distribution_id:
+        description: 'CloudFront Distribution ID'
+        required: true
+        default: 'E3FUU8LKMW773I'
+      new_origin:
+        description: 'New S3 Origin Domain'
+        required: true
+        default: 'portfolio-sergio-sena.s3.us-east-1.amazonaws.com'
+
+jobs:
+  update-cdn:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Configure AWS
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+        
+    - name: Update CloudFront Distribution
+      run: |
+        # Download current config
+        aws cloudfront get-distribution-config --id ${{ github.event.inputs.distribution_id }} > config.json
+        
+        # Extract ETag and config
+        ETAG=$(jq -r '.ETag' config.json)
+        jq '.DistributionConfig | .Origins.Items[0].DomainName = "${{ github.event.inputs.new_origin }}" | .Origins.Items[0].Id = "portfolio-origin"' config.json > updated-config.json
+        
+        # Update distribution
+        aws cloudfront update-distribution \
+          --id ${{ github.event.inputs.distribution_id }} \
+          --distribution-config file://updated-config.json \
+          --if-match $ETAG
+          
+        echo "✅ CDN wildcard updated successfully!"
+        
+    - name: Wait for deployment
+      run: |
+        echo "Waiting for CloudFront deployment..."
+        aws cloudfront wait distribution-deployed --id ${{ github.event.inputs.distribution_id }}
+        echo "✅ Deployment completed!"

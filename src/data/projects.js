@@ -114,10 +114,10 @@ const projectsData = {
         link: './public/portfolio/Devaria/index.html'
     },
     'aws-services': {
-        name: 'AWS S3 Explorer',
+        name: 'AWS Services Dashboard',
         category: 'Cloud Computing',
         client: 'Projetos Corporativos',
-        date: 'Em desenvolvimento',
+        date: 'Janeiro 2025',
         technologies: ['Node.js', 'Express', 'Next.js', 'React', 'TailwindCSS', 'AWS SDK'],
         description: 'Uma aplicação moderna e intuitiva para explorar e gerenciar buckets e objetos do Amazon S3, com interface neon inspirada em temas cyberpunk. Oferece uma experiência visual atraente enquanto fornece funcionalidades completas para gerenciamento de armazenamento em nuvem.',
         features: [
@@ -135,7 +135,7 @@ const projectsData = {
             'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
             'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80'
         ],
-        link: '#'
+        link: 'https://aws-services.sstechnologies-cloud.com'
     },
     'automacao-sistemas': {
         name: 'Automação de Sistemas',
