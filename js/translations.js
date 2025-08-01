@@ -223,7 +223,7 @@ class LanguageSystem {
                 
                 if (response.ok) {
                     const data = await response.json();
-                    this.currentLang = data.country_code === 'BR' ? 'pt' : 'pt'; // Padrão português
+                    this.currentLang = data.country_code === 'BR' ? 'pt' : 'en';
                 } else {
                     throw new Error('API response not ok');
                 }
