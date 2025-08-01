@@ -45,5 +45,4 @@ template.yaml
 *.ps1
 
 # CI/CD
-.github/
 .gitlab-ci.yml
