@@ -35,6 +35,15 @@ package-lock.json
 dist/
 build/
 
-# AWS credentials
-.aws/credentials
-aws-config.json
+# AWS Configuration
+aws/
+.aws/
+*.pem
+*.key
+config.json
+template.yaml
+*.ps1
+
+# CI/CD
+.github/
+.gitlab-ci.yml
