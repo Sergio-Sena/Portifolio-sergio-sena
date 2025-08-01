@@ -223,13 +223,13 @@ class LanguageSystem {
                 
                 if (response.ok) {
                     const data = await response.json();
-                    this.currentLang = data.country_code === 'BR' ? 'pt' : 'en';
+                    this.currentLang = data.country_code === 'BR' ? 'pt' : 'pt'; // Padrão português
                 } else {
                     throw new Error('API response not ok');
                 }
             } catch (error) {
-                // 3. Fallback: idioma do navegador
-                this.currentLang = navigator.language.startsWith('pt') ? 'pt' : 'en';
+                // 3. Fallback: português como padrão
+                this.currentLang = 'pt';
             }
             
             this.applyTranslations();
