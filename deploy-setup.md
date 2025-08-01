@@ -6,20 +6,25 @@ Configure os seguintes secrets no repositório GitHub:
 **Settings > Secrets and variables > Actions > New repository secret**
 
 ### 1. AWS_ACCESS_KEY_ID
-- Chave de acesso AWS com permissões S3 e CloudFront
+- Chave de acesso AWS com permissões S3
 - Exemplo: `AKIA...`
 
 ### 2. AWS_SECRET_ACCESS_KEY  
 - Chave secreta correspondente
 - Exemplo: `wJalrXUt...`
 
-### 3. S3_BUCKET_NAME
+### 3. AWS_REGION
+- Região AWS onde está o bucket S3
+- Exemplo: `us-east-1` ou `sa-east-1`
+
+### 4. S3_BUCKET_NAME
 - Nome do bucket S3 onde o site será hospedado
 - Exemplo: `meu-portfolio-bucket`
 
-### 4. CLOUDFRONT_DISTRIBUTION_ID
+### 5. CLOUDFRONT_DISTRIBUTION_ID (Opcional)
 - ID da distribuição CloudFront
 - Exemplo: `E1234567890ABC`
+- **Deixe vazio se não usar CloudFront**
 
 ## Configuração AWS
 
