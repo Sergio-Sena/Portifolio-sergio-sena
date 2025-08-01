@@ -1,0 +1,348 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Infraestrutura Serverless para Ritech Fechaduras Digitais'
+
+Parameters:
+  DomainName:
+    Type: String
+    Default: 'ritechfechaduras.com.br'
+    Description: 'Nome do domínio principal'
+  
+  SubDomainName:
+    Type: String
+    Default: 'www.ritechfechaduras.com.br'
+    Description: 'Subdomínio www'
+
+  BucketName:
+    Type: String
+    Default: 'ritech-fechaduras-site'
+    Description: 'Nome do bucket S3 (deve ser único globalmente)'
+
+Resources:
+  # S3 Bucket para hospedagem
+  WebsiteBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      VersioningConfiguration:
+        Status: Enabled
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+
+  # Origin Access Control para CloudFront
+  OriginAccessControl:
+    Type: AWS::CloudFront::OriginAccessControl
+    Properties:
+      OriginAccessControlConfig:
+        Name: !Sub '${BucketName}-oac'
+        OriginAccessControlOriginType: s3
+        SigningBehavior: always
+        SigningProtocol: sigv4
+        Description: 'OAC para bucket da Ritech'
+
+  # Bucket Policy para permitir acesso do CloudFront
+  BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref WebsiteBucket
+      PolicyDocument:
+        Statement:
+          - Sid: AllowCloudFrontServicePrincipal
+            Effect: Allow
+            Principal:
+              Service: cloudfront.amazonaws.com
+            Action: s3:GetObject
+            Resource: !Sub '${WebsiteBucket}/*'
+            Condition:
+              StringEquals:
+                'AWS:SourceArn': !Sub 'arn:aws:cloudfront::${AWS::AccountId}:distribution/${CloudFrontDistribution}'
+
+  # Certificado SSL
+  SSLCertificate:
+    Type: AWS::CertificateManager::Certificate
+    Properties:
+      DomainName: !Ref DomainName
+      SubjectAlternativeNames:
+        - !Ref SubDomainName
+      ValidationMethod: DNS
+      DomainValidationOptions:
+        - DomainName: !Ref DomainName
+          HostedZoneId: !Ref HostedZone
+        - DomainName: !Ref SubDomainName
+          HostedZoneId: !Ref HostedZone
+
+  # Hosted Zone do Route 53
+  HostedZone:
+    Type: AWS::Route53::HostedZone
+    Properties:
+      Name: !Ref DomainName
+      HostedZoneConfig:
+        Comment: 'Zona DNS para Ritech Fechaduras'
+
+  # CloudFront Distribution
+  CloudFrontDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Comment: 'CDN para Ritech Fechaduras Digitais'
+        DefaultRootObject: Index.html
+        Enabled: true
+        HttpVersion: http2
+        PriceClass: PriceClass_100
+        
+        # Aliases (domínios customizados)
+        Aliases:
+          - !Ref DomainName
+          - !Ref SubDomainName
+        
+        # Certificado SSL
+        ViewerCertificate:
+          AcmCertificateArn: !Ref SSLCertificate
+          SslSupportMethod: sni-only
+          MinimumProtocolVersion: TLSv1.2_2021
+        
+        # Origem S3
+        Origins:
+          - Id: S3Origin
+            DomainName: !GetAtt WebsiteBucket.RegionalDomainName
+            S3OriginConfig:
+              OriginAccessIdentity: ''
+            OriginAccessControlId: !GetAtt OriginAccessControl.Id
+        
+        # Comportamento de cache padrão
+        DefaultCacheBehavior:
+          TargetOriginId: S3Origin
+          ViewerProtocolPolicy: redirect-to-https
+          CachePolicyId: '4135ea2d-6df8-44a3-9df3-4b5a84be39ad' # Managed-CachingOptimized
+          OriginRequestPolicyId: '88a5eaf4-2fd4-4709-b370-b4c650ea3fcf' # Managed-CORS-S3Origin
+          ResponseHeadersPolicyId: '5cc3b908-e619-4b99-88e5-2cf7f45965bd' # Managed-SecurityHeadersPolicy
+          Compress: true
+          
+        # Comportamentos específicos para assets
+        CacheBehaviors:
+          # CSS e JS com cache longo
+          - PathPattern: '*.css'
+            TargetOriginId: S3Origin
+            ViewerProtocolPolicy: redirect-to-https
+            CachePolicyId: '4135ea2d-6df8-44a3-9df3-4b5a84be39ad'
+            Compress: true
+            
+          - PathPattern: '*.js'
+            TargetOriginId: S3Origin
+            ViewerProtocolPolicy: redirect-to-https
+            CachePolicyId: '4135ea2d-6df8-44a3-9df3-4b5a84be39ad'
+            Compress: true
+            
+          # Imagens com cache muito longo
+          - PathPattern: 'Images/*'
+            TargetOriginId: S3Origin
+            ViewerProtocolPolicy: redirect-to-https
+            CachePolicyId: '4135ea2d-6df8-44a3-9df3-4b5a84be39ad'
+            Compress: true
+        
+        # Páginas de erro customizadas
+        CustomErrorResponses:
+          - ErrorCode: 404
+            ResponseCode: 404
+            ResponsePagePath: '/error.html'
+            ErrorCachingMinTTL: 300
+          - ErrorCode: 403
+            ResponseCode: 404
+            ResponsePagePath: '/error.html'
+            ErrorCachingMinTTL: 300
+
+  # Registros DNS
+  DNSRecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: !Ref HostedZone
+      Name: !Ref DomainName
+      Type: A
+      AliasTarget:
+        DNSName: !GetAtt CloudFrontDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2 # CloudFront Hosted Zone ID
+
+  WWWDNSRecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: !Ref HostedZone
+      Name: !Ref SubDomainName
+      Type: A
+      AliasTarget:
+        DNSName: !GetAtt CloudFrontDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+
+  # WAF Web ACL (opcional)
+  WebACL:
+    Type: AWS::WAFv2::WebACL
+    Properties:
+      Name: !Sub '${BucketName}-waf'
+      Scope: CLOUDFRONT
+      DefaultAction:
+        Allow: {}
+      Rules:
+        # Rate limiting
+        - Name: RateLimitRule
+          Priority: 1
+          Statement:
+            RateBasedStatement:
+              Limit: 2000
+              AggregateKeyType: IP
+          Action:
+            Block: {}
+          VisibilityConfig:
+            SampledRequestsEnabled: true
+            CloudWatchMetricsEnabled: true
+            MetricName: RateLimitRule
+        
+        # AWS Managed Rules
+        - Name: AWSManagedRulesCommonRuleSet
+          Priority: 2
+          OverrideAction:
+            None: {}
+          Statement:
+            ManagedRuleGroupStatement:
+              VendorName: AWS
+              Name: AWSManagedRulesCommonRuleSet
+          VisibilityConfig:
+            SampledRequestsEnabled: true
+            CloudWatchMetricsEnabled: true
+            MetricName: CommonRuleSetMetric
+
+  # Lambda@Edge para headers de segurança
+  EdgeLambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+                - edgelambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+
+  SecurityHeadersFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub '${BucketName}-security-headers'
+      Runtime: nodejs18.x
+      Handler: index.handler
+      Role: !GetAtt EdgeLambdaRole.Arn
+      Code:
+        ZipFile: |
+          exports.handler = (event, context, callback) => {
+              const response = event.Records[0].cf.response;
+              const headers = response.headers;
+
+              // Security headers
+              headers['strict-transport-security'] = [{
+                  key: 'Strict-Transport-Security',
+                  value: 'max-age=31536000; includeSubDomains; preload'
+              }];
+              
+              headers['x-content-type-options'] = [{
+                  key: 'X-Content-Type-Options',
+                  value: 'nosniff'
+              }];
+              
+              headers['x-frame-options'] = [{
+                  key: 'X-Frame-Options',
+                  value: 'DENY'
+              }];
+              
+              headers['x-xss-protection'] = [{
+                  key: 'X-XSS-Protection',
+                  value: '1; mode=block'
+              }];
+              
+              headers['referrer-policy'] = [{
+                  key: 'Referrer-Policy',
+                  value: 'strict-origin-when-cross-origin'
+              }];
+
+              callback(null, response);
+          };
+
+  # CloudWatch Dashboard
+  MonitoringDashboard:
+    Type: AWS::CloudWatch::Dashboard
+    Properties:
+      DashboardName: !Sub '${BucketName}-monitoring'
+      DashboardBody: !Sub |
+        {
+          "widgets": [
+            {
+              "type": "metric",
+              "x": 0,
+              "y": 0,
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "metrics": [
+                  [ "AWS/CloudFront", "Requests", "DistributionId", "${CloudFrontDistribution}" ],
+                  [ ".", "BytesDownloaded", ".", "." ]
+                ],
+                "period": 300,
+                "stat": "Sum",
+                "region": "us-east-1",
+                "title": "CloudFront Requests & Bandwidth"
+              }
+            },
+            {
+              "type": "metric",
+              "x": 0,
+              "y": 6,
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "metrics": [
+                  [ "AWS/CloudFront", "4xxErrorRate", "DistributionId", "${CloudFrontDistribution}" ],
+                  [ ".", "5xxErrorRate", ".", "." ]
+                ],
+                "period": 300,
+                "stat": "Average",
+                "region": "us-east-1",
+                "title": "Error Rates"
+              }
+            }
+          ]
+        }
+
+Outputs:
+  WebsiteURL:
+    Description: 'URL do website'
+    Value: !Sub 'https://${DomainName}'
+    Export:
+      Name: !Sub '${AWS::StackName}-WebsiteURL'
+
+  CloudFrontDistributionId:
+    Description: 'ID da distribuição CloudFront'
+    Value: !Ref CloudFrontDistribution
+    Export:
+      Name: !Sub '${AWS::StackName}-DistributionId'
+
+  S3BucketName:
+    Description: 'Nome do bucket S3'
+    Value: !Ref WebsiteBucket
+    Export:
+      Name: !Sub '${AWS::StackName}-BucketName'
+
+  HostedZoneId:
+    Description: 'ID da Hosted Zone'
+    Value: !Ref HostedZone
+    Export:
+      Name: !Sub '${AWS::StackName}-HostedZoneId'
+
+  NameServers:
+    Description: 'Name servers para configurar no registrador de domínio'
+    Value: !Join [', ', !GetAtt HostedZone.NameServers]

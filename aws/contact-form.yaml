@@ -1,0 +1,204 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Formulário de contato serverless usando Lambda e API Gateway'
+
+Parameters:
+  EmailDestination:
+    Type: String
+    Description: Email para receber as mensagens do formulário de contato
+    Default: seu-email@exemplo.com
+
+Resources:
+  # Função Lambda para processar o formulário de contato
+  ContactFormFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: contact-form-handler
+      Runtime: nodejs16.x
+      Handler: index.handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Timeout: 10
+      Code:
+        ZipFile: |
+          const AWS = require('aws-sdk');
+          const ses = new AWS.SES({ region: 'us-east-1' });
+          
+          exports.handler = async (event) => {
+            try {
+              // Configurar CORS
+              const headers = {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Headers': 'Content-Type',
+                'Access-Control-Allow-Methods': 'POST, OPTIONS'
+              };
+              
+              // Lidar com solicitações OPTIONS (preflight)
+              if (event.httpMethod === 'OPTIONS') {
+                return {
+                  statusCode: 200,
+                  headers,
+                  body: JSON.stringify({ message: 'CORS preflight successful' })
+                };
+              }
+              
+              // Processar solicitação POST
+              if (event.httpMethod !== 'POST') {
+                return {
+                  statusCode: 405,
+                  headers,
+                  body: JSON.stringify({ message: 'Method not allowed' })
+                };
+              }
+              
+              // Analisar o corpo da solicitação
+              const body = JSON.parse(event.body);
+              const { name, email, subject, message } = body;
+              
+              if (!name || !email || !message) {
+                return {
+                  statusCode: 400,
+                  headers,
+                  body: JSON.stringify({ message: 'Missing required fields' })
+                };
+              }
+              
+              // Preparar o email
+              const emailParams = {
+                Destination: {
+                  ToAddresses: [process.env.EMAIL_DESTINATION]
+                },
+                Message: {
+                  Body: {
+                    Text: {
+                      Data: `Nome: ${name}\nEmail: ${email}\nAssunto: ${subject || 'Sem assunto'}\n\nMensagem:\n${message}`
+                    }
+                  },
+                  Subject: {
+                    Data: `Formulário de Contato: ${subject || 'Nova mensagem'}`
+                  }
+                },
+                Source: process.env.EMAIL_DESTINATION
+              };
+              
+              // Enviar o email
+              await ses.sendEmail(emailParams).promise();
+              
+              return {
+                statusCode: 200,
+                headers,
+                body: JSON.stringify({ message: 'Email enviado com sucesso' })
+              };
+            } catch (error) {
+              console.error('Erro:', error);
+              return {
+                statusCode: 500,
+                headers: {
+                  'Access-Control-Allow-Origin': '*'
+                },
+                body: JSON.stringify({ message: 'Erro ao processar a solicitação' })
+              };
+            }
+          };
+      Environment:
+        Variables:
+          EMAIL_DESTINATION: !Ref EmailDestination
+
+  # Papel de execução para a função Lambda
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: SESSendEmailPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - ses:SendEmail
+                  - ses:SendRawEmail
+                Resource: '*'
+
+  # API Gateway para expor a função Lambda
+  ContactFormApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: contact-form-api
+      Description: API para o formulário de contato
+      EndpointConfiguration:
+        Types:
+          - REGIONAL
+
+  # Recurso da API
+  ContactFormResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      RestApiId: !Ref ContactFormApi
+      ParentId: !GetAtt ContactFormApi.RootResourceId
+      PathPart: contact
+
+  # Método POST
+  ContactFormMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref ContactFormApi
+      ResourceId: !Ref ContactFormResource
+      HttpMethod: POST
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS_PROXY
+        IntegrationHttpMethod: POST
+        Uri: !Sub arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${ContactFormFunction.Arn}/invocations
+
+  # Método OPTIONS para CORS
+  ContactFormOptionsMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref ContactFormApi
+      ResourceId: !Ref ContactFormResource
+      HttpMethod: OPTIONS
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS_PROXY
+        IntegrationHttpMethod: POST
+        Uri: !Sub arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${ContactFormFunction.Arn}/invocations
+
+  # Implantação da API
+  ApiDeployment:
+    Type: AWS::ApiGateway::Deployment
+    DependsOn:
+      - ContactFormMethod
+      - ContactFormOptionsMethod
+    Properties:
+      RestApiId: !Ref ContactFormApi
+      StageName: prod
+
+  # Permissão para API Gateway invocar a função Lambda
+  LambdaPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref ContactFormFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ContactFormApi}/*/POST/contact
+
+  # Permissão para API Gateway invocar a função Lambda (OPTIONS)
+  LambdaPermissionOptions:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref ContactFormFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ContactFormApi}/*/OPTIONS/contact
+
+Outputs:
+  ApiEndpoint:
+    Description: URL do endpoint da API para o formulário de contato
+    Value: !Sub https://${ContactFormApi}.execute-api.${AWS::Region}.amazonaws.com/prod/contact

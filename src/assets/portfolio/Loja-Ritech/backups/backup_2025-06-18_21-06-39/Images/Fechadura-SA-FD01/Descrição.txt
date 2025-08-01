@@ -1,0 +1,9 @@
+DESCRIÇÃO: SD_FD01
+Fechadura digital de embutir com Modelo de entrada
+permite a abertura por :
+-biometria
+-tag de proximidade
+-senha 
+-chave de emergencia 
+-aplicativo TUYA  para abertura a distancia 
+( INSTALAÇÃO INCLUSA SEM CUSTO ADICIONAL)

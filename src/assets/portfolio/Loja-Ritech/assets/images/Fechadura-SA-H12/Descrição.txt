@@ -1,0 +1,9 @@
+DESCRIÇÃO:FD_H12
+Fechadura digital de embutir com maquinario reforçado,”Padrão europeu” 
+Permite abertura por: 
+-Biometria 
+-Senha 
+-Tag de aproximidade 
+-Chave emergencia 
+-Aplicativo para abertura  a distancia com captura de imagem 
+-Vizor digital integrado

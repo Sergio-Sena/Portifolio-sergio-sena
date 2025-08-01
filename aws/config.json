@@ -1,0 +1,6 @@
+{
+  "domain": "seudominio.com",
+  "region": "us-east-1",
+  "profile": "default",
+  "contactEmail": "seu-email@exemplo.com"
+}

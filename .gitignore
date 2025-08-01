@@ -1,0 +1,40 @@
+# Arquivos de teste
+test-*
+*.test.*
+temp-*
+
+# Arquivos de configuração local
+.env
+.env.local
+config.local.*
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node modules (se usar)
+node_modules/
+package-lock.json
+
+# Build
+dist/
+build/
+
+# AWS credentials
+.aws/credentials
+aws-config.json

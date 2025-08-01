@@ -1,0 +1,46 @@
+/* Arquivo de compatibilidade para projetos de portfólio */
+
+/* Estilos gerais para garantir que os projetos de portfólio mantenham seu estilo original */
+.portfolio-project {
+    font-family: inherit !important;
+    color: inherit !important;
+    background-color: inherit !important;
+}
+
+/* Estilos específicos para o projeto STGBR */
+.stgbr-project {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Estilos específicos para o projeto Base Imóveis */
+.base-imoveis-project {
+    font-family: 'Heebo', sans-serif !important;
+}
+
+/* Garantir que os estilos do Tailwind não afetem os projetos de portfólio */
+.portfolio-project * {
+    box-sizing: content-box !important;
+}
+
+/* Garantir que os links dos projetos de portfólio mantenham seu estilo original */
+.portfolio-project a {
+    color: inherit !important;
+    text-decoration: inherit !important;
+}
+
+/* Garantir que os botões dos projetos de portfólio mantenham seu estilo original */
+.portfolio-project button,
+.portfolio-project .button {
+    background-color: inherit !important;
+    color: inherit !important;
+    border: inherit !important;
+}
+
+/* Garantir que os formulários dos projetos de portfólio mantenham seu estilo original */
+.portfolio-project input,
+.portfolio-project textarea,
+.portfolio-project select {
+    background-color: inherit !important;
+    color: inherit !important;
+    border: inherit !important;
+}

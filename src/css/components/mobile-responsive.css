@@ -1,0 +1,258 @@
+/* Mobile-First Responsive Design */
+
+/* Base styles - Mobile First */
+* {
+    box-sizing: border-box;
+}
+
+/* Touch targets - mínimo 44px para acessibilidade */
+.touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Melhorias para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Container responsivo */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Tipografia responsiva */
+    h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+    
+    /* Espaçamento otimizado para mobile */
+    .py-8 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    .py-16 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    /* Cards responsivos */
+    .card-hover {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Botões mobile-friendly */
+    button, .button, a[class*="bg-"] {
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Formulários otimizados */
+    input, textarea, select {
+        font-size: 16px; /* Previne zoom no iOS */
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+    }
+    
+    /* Grid responsivo */
+    .grid {
+        gap: 1rem;
+    }
+    
+    /* Navegação mobile */
+    #mobileMenu {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    
+    /* Imagens responsivas */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Texto responsivo */
+    .text-responsive {
+        font-size: clamp(0.875rem, 2.5vw, 1rem);
+    }
+    
+    /* Espaçamento entre seções */
+    section + section {
+        margin-top: 2rem;
+    }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
+    /* Grid para tablets */
+    .grid-cols-1.md\\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .grid-cols-1.md\\:grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
+    /* Grid para desktop */
+    .grid-cols-1.lg\\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Melhorias de performance */
+.card-hover {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Animações otimizadas */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Dark mode otimizado */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #0f0f1a;
+        --text-primary: #f0f0f0;
+        --text-secondary: #a0a0a0;
+    }
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-contrast: high) {
+    .gradient-text {
+        background: linear-gradient(90deg, #00ffff, #ff00ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+}
+
+/* Focus states melhorados */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #00f7ff;
+    outline-offset: 2px;
+}
+
+/* Hover states apenas para dispositivos com hover */
+@media (hover: hover) {
+    .card-hover:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0, 247, 255, 0.3);
+    }
+    
+    button:hover,
+    .button:hover {
+        opacity: 0.9;
+    }
+}
+
+/* Otimizações para telas pequenas */
+@media (max-width: 480px) {
+    /* Reduzir ainda mais o espaçamento */
+    .py-8 {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .py-16 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    /* Tipografia ainda menor */
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Botões em stack */
+    .flex.flex-col.sm\\:flex-row {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    /* Cards com menos padding */
+    .card-hover {
+        padding: 0.75rem;
+    }
+}
+
+/* Landscape orientation para mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .min-h-screen {
+        min-height: 100vh;
+    }
+    
+    /* Ajustar hero section em landscape */
+    section:first-of-type {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .fixed,
+    #particles-js,
+    .grid-overlay,
+    button,
+    .button {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .gradient-text {
+        color: black !important;
+        background: none !important;
+    }
+}

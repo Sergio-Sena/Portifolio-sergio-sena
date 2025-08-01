@@ -1,0 +1,146 @@
+body {
+    scroll-behavior: smooth;
+  }
+  #produtos,
+  #servicos,
+  #contato {
+    scroll-margin-top: 80px;
+  }
+.gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .neon-blue {
+            color: #00f0ff;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+        }
+        .neon-border {
+            border: 1px solid #00f0ff;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 240, 255, 0.3);
+        }
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00f0ff, 0 0 20px #00f0ff;
+            }
+            to {
+                box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00f0ff, 0 0 40px #00f0ff;
+            }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .google-btn {
+            transition: all 0.3s ease;
+        }
+        .google-btn:hover {
+            box-shadow: 0 0 10px rgba(66, 133, 244, 0.5);
+        }
+
+        #modal-produto {
+            .p-6 {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100%;
+            }
+            #modal-imagem {
+              max-width: 90vw; /* Ocupa 90% da largura da tela */
+              max-height: 80vh; /* Ocupa 80% da altura da tela */
+              object-fit: contain; /* Mantém proporção */
+            }
+          }
+/* Botão "Ver Galeria" */
+.gallery-btn {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.aspect-video:hover .gallery-btn {
+  opacity: 1;
+}
+
+/* Modal de Galeria */
+#galleryModal {
+  display: none; /* Inicialmente oculto */
+}
+
+#galleryModal.active {
+  display: flex; /* Exibe o modal */
+}
+
+#expandedImage {
+  max-width: 90%; /* No máximo 90% da tela */
+  max-height: 90%;
+  object-fit: contain; /* Mantém as proporções da imagem */
+  opacity: 1; /* Opacidade inicial */
+  transition: opacity 1ms ease-in-out; /* Animação de fade */
+}
+#expandedImage.fade-out {
+  opacity: 0; /* Opacidade reduzida durante a troca de imagem */
+}
+
+/* Botões de navegação (< e >) */
+#prevImage,
+#nextImage {
+  background-color: rgba(0, 123, 255, 0.8); /* Azul primário com transparência */
+  border: none;
+  border-radius: 50%; /* Formato circular */
+  width: 50px; /* Tamanho fixo */
+  height: 50px; /* Tamanho fixo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Cor do ícone */
+  font-size: 2rem; /* Tamanho do ícone */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+#prevImage:hover,
+#nextImage:hover {
+  background-color: rgba(0, 123, 255, 1); /* Azul mais escuro ao passar o mouse */
+  transform: scale(1.1); /* Efeito de ampliação */
+}
+
+/* Botão de fechar (X) */
+#closeGallery {
+  background-color: rgba(220, 53, 69, 0.8); /* Vermelho com transparência */
+  border: none;
+  border-radius: 50%; /* Formato circular */
+  width: 50px; /* Tamanho fixo */
+  height: 50px; /* Tamanho fixo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Cor do ícone */
+  font-size: 1.5rem; /* Tamanho do ícone */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+#closeGallery:hover {
+  background-color: rgba(220, 53, 69, 1); /* Vermelho mais escuro ao passar o mouse */
+  transform: scale(1.1); /* Efeito de ampliação */
+}
+button[id="prevImage"], button[id="nextImage"] {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button[id="prevImage"]:hover, button[id="nextImage"]:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+

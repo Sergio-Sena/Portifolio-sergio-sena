@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ritech-fechaduras-digitais.sstechnologies-cloud.com/sitemap.xml
