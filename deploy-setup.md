@@ -21,10 +21,7 @@ Configure os seguintes secrets no repositório GitHub:
 - Nome do bucket S3 onde o site será hospedado
 - Exemplo: `meu-portfolio-bucket`
 
-### 5. CLOUDFRONT_DISTRIBUTION_ID (Opcional)
-- ID da distribuição CloudFront
-- Exemplo: `E1234567890ABC`
-- **Deixe vazio se não usar CloudFront**
+
 
 ## Configuração AWS
 
@@ -60,13 +57,6 @@ aws s3 website s3://meu-portfolio-bucket \
         "arn:aws:s3:::meu-portfolio-bucket",
         "arn:aws:s3:::meu-portfolio-bucket/*"
       ]
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "cloudfront:CreateInvalidation"
-      ],
-      "Resource": "*"
     }
   ]
 }
@@ -77,8 +67,7 @@ aws s3 website s3://meu-portfolio-bucket \
 1. **Push para main** → Trigger do workflow
 2. **Checkout** → Download do código
 3. **AWS Config** → Configuração das credenciais
-4. **S3 Sync** → Upload dos arquivos
-5. **CloudFront Invalidation** → Limpeza do cache
+4. **S3 Sync** → Upload dos arquivos com limpeza automática
 
 ## Estrutura de Deploy
 

@@ -28,11 +28,10 @@ jobs:
           --exclude ".github/*" \
           --exclude "*.md" \
           --exclude ".gitignore" \
+          --exclude "*.log" \
+          --exclude "*.tmp" \
+          --exclude "*.conf" \
+          --exclude "*.config" \
+          --exclude "test-*" \
+          --exclude "temp-*" \
           --delete
-          
-    - name: Invalidate CloudFront (Optional)
-      if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-      run: |
-        aws cloudfront create-invalidation \
-          --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
-          --paths "/*"
