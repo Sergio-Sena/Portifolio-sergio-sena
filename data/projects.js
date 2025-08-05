@@ -114,10 +114,10 @@ const projectsData = {
         link: './public/portfolio/Devaria/index.html'
     },
     'aws-services': {
-        name: 'AWS S3 Explorer',
+        name: 'AWS Services',
         category: 'Cloud Computing',
         client: 'Projetos Corporativos',
-        date: 'Em desenvolvimento',
+        date: 'Agosto 2025',
         technologies: ['Node.js', 'Express', 'Next.js', 'React', 'TailwindCSS', 'AWS SDK'],
         description: 'Uma aplicação moderna e intuitiva para explorar e gerenciar buckets e objetos do Amazon S3, com interface neon inspirada em temas cyberpunk. Oferece uma experiência visual atraente enquanto fornece funcionalidades completas para gerenciamento de armazenamento em nuvem.',
         features: [
