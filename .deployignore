@@ -1,0 +1,50 @@
+# Arquivos do Workspace (não enviar para portfólio)
+server.js
+totp.js
+setup-google-auth.js
+start-workspace.js
+start-workspace.bat
+start-tunnel.js
+start-simple.bat
+aws-tunnel-solution.js
+secure-transfer.js
+workspace-access.js
+google-auth-setup.html
+tunnel-url.txt
+
+# Scripts de deploy
+deploy*.ps1
+deploy*.bat
+get-tunnel-url.js
+
+# Testes
+test-*.js
+quick-test.js
+
+# Documentação técnica
+*.md
+WORKSPACE-README.md
+IMPLEMENTACAO-FLUXO-AWS.md
+PLANO-IMPLEMENTACAO-WORKSPACE.md
+Arquitetura*.md
+deploy-setup.md
+remote-access-setup.md
+
+# Node.js
+package.json
+package-lock.json
+node_modules/
+
+# AWS configs
+aws/
+
+# GitHub Actions
+.github/
+
+# Uploads e temp
+uploads/
+temp-*
+
+# Git
+.git/
+.gitignore
